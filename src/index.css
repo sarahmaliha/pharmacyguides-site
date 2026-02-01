@@ -15,5 +15,5 @@
 
 body {
   @apply antialiased text-slate-800;
-  background-color: rgb(224 247 250 / 0.2);
+  background-color: rgb(204 251 241 / 0.2);
 }

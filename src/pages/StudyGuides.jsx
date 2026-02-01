@@ -120,9 +120,9 @@ export default function StudyGuides() {
         {/* Subtle pill pattern */}
         <div className="absolute top-0 right-0 w-64 h-64 opacity-[0.06]" aria-hidden="true">
           <svg className="w-full h-full" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M 12 24 L 52 24 A 8 8 0 0 1 52 40 L 12 40 A 8 8 0 0 1 12 24 Z" fill="#aac0ff" />
-            <path d="M 8 13 L 24 13 A 3 3 0 0 1 24 19 L 8 19 A 3 3 0 0 1 8 13 Z" fill="#aac0ff" />
-            <path d="M 40 45 L 56 45 A 3 3 0 0 1 56 51 L 40 51 A 3 3 0 0 1 40 45 Z" fill="#aac0ff" />
+            <path d="M 12 24 L 52 24 A 8 8 0 0 1 52 40 L 12 40 A 8 8 0 0 1 12 24 Z" fill="#99f6e4" />
+            <path d="M 8 13 L 24 13 A 3 3 0 0 1 24 19 L 8 19 A 3 3 0 0 1 8 13 Z" fill="#99f6e4" />
+            <path d="M 40 45 L 56 45 A 3 3 0 0 1 56 51 L 40 51 A 3 3 0 0 1 40 45 Z" fill="#99f6e4" />
           </svg>
         </div>
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -108,8 +108,8 @@ export default function ResourceLibrary() {
         <svg className="absolute w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="resource-pills" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
-              <path d="M 7 27.5 L 23 27.5 A 2.5 2.5 0 0 1 23 32.5 L 7 32.5 A 2.5 2.5 0 0 1 7 27.5 Z" fill="#aac0ff" />
-              <path d="M 37 7.5 L 53 7.5 A 2.5 2.5 0 0 1 53 12.5 L 37 12.5 A 2.5 2.5 0 0 1 37 7.5 Z" fill="#aac0ff" />
+              <path d="M 7 27.5 L 23 27.5 A 2.5 2.5 0 0 1 23 32.5 L 7 32.5 A 2.5 2.5 0 0 1 7 27.5 Z" fill="#99f6e4" />
+              <path d="M 37 7.5 L 53 7.5 A 2.5 2.5 0 0 1 53 12.5 L 37 12.5 A 2.5 2.5 0 0 1 37 7.5 Z" fill="#99f6e4" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#resource-pills)" />

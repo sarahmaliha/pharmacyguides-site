@@ -8,16 +8,16 @@ export default {
     extend: {
       colors: {
         teal: {
-          50: '#eef4ff',
-          100: '#d9e4ff',
-          200: '#bcd0ff',
-          300: '#aac0ff',
-          400: '#8ba8f5',
-          500: '#aac0ff',
-          600: '#aac0ff',
-          700: '#8ba3e8',
-          800: '#6b8ad4',
-          900: '#4a6bb8',
+          50: '#f0fdfa',
+          100: '#ccfbf1',
+          200: '#99f6e4',
+          300: '#5eead4',
+          400: '#2dd4bf',
+          500: '#14b8a6',
+          600: '#0d9488',
+          700: '#0f766e',
+          800: '#115e59',
+          900: '#134e4a',
         },
         sage: {
           50: '#f6f7f4',
@@ -31,13 +31,13 @@ export default {
           800: '#3d4732',
           900: '#343c2b',
         },
-        // Etsy banner: mint → light pastel blue
+        // Mint → teal gradient (original teal palette)
         brand: {
           mint: '#c8f0e0',
           mintLight: '#e0f7f2',
-          skyLight: '#e0f7fa',
-          skyPastel: '#b2ebf2',
-          skySoft: '#add8e6',
+          skyLight: '#ccfbf1',
+          skyPastel: '#99f6e4',
+          skySoft: '#5eead4',
         },
       },
       fontFamily: {

@@ -1,37 +1,28 @@
 import { Link } from 'react-router-dom'
 import { CapsuleBullet } from './icons/PharmaIcons'
+import { TESTIMONIALS } from '../data/etsyReviews'
+
+const FADE_DURATION = 0.8
+const FADE_DELAY_STAGGER = 1
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-teal-50 via-white to-sage-50">
-      {/* Pharmacy-themed background: subtle pill/capsule shapes */}
-      <div className="absolute inset-0 opacity-[0.05]" aria-hidden="true">
-        <svg className="absolute w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="hero-pills" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
-              <ellipse cx="20" cy="40" rx="12" ry="4" fill="#0d9488" />
-              <ellipse cx="60" cy="15" rx="12" ry="4" fill="#0d9488" />
-              <ellipse cx="45" cy="65" rx="12" ry="4" fill="#0d9488" />
-              <circle cx="70" cy="50" r="4" fill="#0d9488" />
-              <circle cx="10" cy="20" r="3" fill="#0d9488" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#hero-pills)" />
-        </svg>
+    <section className="relative overflow-hidden bg-gradient-to-r from-brand-mint via-brand-mintLight to-brand-skyPastel">
+      {/* Top banner: blends into nav — Dr. Sarah / PharmacyGuides cover */}
+      <div className="w-full">
+        <img
+          src="/hero-banner.png"
+          alt="PharmacyGuides by Dr. Sarah, PharmD RPh — Hi, I'm Dr. Sarah. I support pharmacy students and pharmacists at every stage."
+          className="w-full h-auto object-cover object-center"
+          width={1200}
+          height={400}
+        />
       </div>
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-32">
-        <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16 xl:gap-20">
-          {/* Logo: Dr. Sarah as the face of the brand — prominent on all screens */}
-          <div className="flex-shrink-0 mx-auto lg:mx-0 mb-10 lg:mb-0 lg:order-2">
-            <img
-              src="/logo-dr-sarah.png"
-              alt="PharmacyGuides by Dr. Sarah, PharmD RPh — your guide to pharmacy school, licensure, and industry"
-              className="w-56 h-auto sm:w-72 lg:w-80 xl:w-96 max-w-full drop-shadow-lg"
-              width={384}
-              height={384}
-            />
-          </div>
-          <div className="max-w-2xl lg:order-1">
+
+      {/* Main message + review column */}
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-28">
+        <div className="flex flex-col lg:flex-row lg:items-stretch lg:gap-8 xl:gap-10">
+          <div className="max-w-2xl flex-shrink-0">
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight tracking-tight">
               Master pharmacy school, licensure exams, and{' '}
               <span className="text-teal-600">beyond.</span>
@@ -44,6 +35,7 @@ export default function Hero() {
                 'Concise guides on 65+ clinical pharmacy topics',
                 'Up-to-date NAPLEX & MPJE Review',
                 'Quick reference for clinical rotations',
+                'Guidance on Breaking into the Industry',
                 'Created by a licensed pharmacist',
               ].map((item, i) => (
                 <li key={i} className="flex items-center gap-3">
@@ -68,6 +60,31 @@ export default function Hero() {
                 Browse Study Guides
               </Link>
             </div>
+          </div>
+
+          {/* 5 reviews — vertical column, staggered fade-in; wider to align with left section */}
+          <div className="mt-12 lg:mt-0 lg:flex-1 lg:min-w-0 lg:max-w-xl flex flex-col gap-3 lg:min-h-0">
+            {TESTIMONIALS.map((review, i) => (
+              <blockquote
+                key={i}
+                className="bg-white/95 backdrop-blur-sm rounded-2xl border border-brand-skyPastel/80 shadow-sm p-3 sm:p-4 text-left opacity-0 flex-shrink-0"
+                style={{
+                  animation: `fade-in-up ${FADE_DURATION}s ease-out ${FADE_DELAY_STAGGER * i}s forwards`,
+                }}
+              >
+                <div className="flex gap-0.5 mb-1.5" aria-label={`${review.rating} stars`}>
+                  {Array.from({ length: review.rating }).map((_, j) => (
+                    <span key={j} className="text-amber-400 text-xs" aria-hidden>★</span>
+                  ))}
+                </div>
+                <p className="text-slate-700 italic text-xs sm:text-sm leading-relaxed">
+                  "{review.quote}"
+                </p>
+                <footer className="mt-1.5 text-[11px] font-medium text-slate-600">
+                  — {review.author}
+                </footer>
+              </blockquote>
+            ))}
           </div>
         </div>
       </div>

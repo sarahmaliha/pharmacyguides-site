@@ -9,15 +9,15 @@ const CATEGORY_ICONS = {
 
 export default function StudyGuideCatalog() {
   return (
-    <section className="relative py-16 sm:py-24 bg-gradient-to-b from-slate-50 to-white border-t border-slate-200 overflow-hidden">
+    <section id="shop-study-guides-on-etsy" className="relative py-16 sm:py-24 bg-gradient-to-b from-brand-skyLight/40 to-white border-t border-brand-skyPastel/40 overflow-hidden scroll-mt-24">
       {/* Subtle pill/capsule pattern */}
       <div className="absolute inset-0 opacity-[0.04]" aria-hidden="true">
         <svg className="absolute w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="pill-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-              <ellipse cx="8" cy="20" rx="6" ry="2" fill="currentColor" className="text-teal-600" />
-              <ellipse cx="32" cy="8" rx="6" ry="2" fill="currentColor" className="text-teal-600" />
-              <ellipse cx="24" cy="32" rx="6" ry="2" fill="currentColor" className="text-teal-600" />
+              <path d="M 2 18 L 14 18 A 2 2 0 0 1 14 22 L 2 22 A 2 2 0 0 1 2 18 Z" fill="currentColor" className="text-teal-600" />
+              <path d="M 26 6 L 38 6 A 2 2 0 0 1 38 10 L 26 10 A 2 2 0 0 1 26 6 Z" fill="currentColor" className="text-teal-600" />
+              <path d="M 20 30 L 32 30 A 2 2 0 0 1 32 34 L 20 34 A 2 2 0 0 1 20 30 Z" fill="currentColor" className="text-teal-600" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#pill-pattern)" />
@@ -55,9 +55,14 @@ export default function StudyGuideCatalog() {
         <div className="space-y-10">
           {STUDY_GUIDE_CATEGORIES.map((category) => {
             const IconComponent = CATEGORY_ICONS[category.id] || RxPill
+            const isMpje = category.id === 'mpje'
             return (
-              <div key={category.id} className="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
-                <div className="px-6 py-4 sm:px-8 sm:py-5 border-b border-slate-100 bg-gradient-to-r from-teal-50/80 to-white flex items-center gap-4">
+              <div
+                key={category.id}
+                id={isMpje ? 'pharmacy-law-mpje-resources' : undefined}
+                className={`rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden ${isMpje ? 'scroll-mt-24' : ''}`}
+              >
+                <div className="px-6 py-4 sm:px-8 sm:py-5 border-b border-slate-100 bg-gradient-to-r from-brand-mintLight to-white flex items-center gap-4">
                   <span className="w-10 h-10 rounded-lg bg-teal-100 text-teal-600 flex items-center justify-center shrink-0">
                     <IconComponent className="w-5 h-5" />
                   </span>
@@ -79,7 +84,7 @@ export default function StudyGuideCatalog() {
                         href={item.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-between gap-4 px-6 py-3.5 sm:px-8 sm:py-4 hover:bg-teal-50/50 transition-colors group"
+                        className="flex items-center justify-between gap-4 px-6 py-3.5 sm:px-8 sm:py-4 hover:bg-brand-mintLight/60 transition-colors group"
                       >
                         <span className="flex items-center gap-3">
                           <span className="text-teal-500 group-hover:text-teal-600 transition-colors" aria-hidden="true">
@@ -99,6 +104,13 @@ export default function StudyGuideCatalog() {
                     </li>
                   ))}
                 </ul>
+                {category.id === 'mpje' && (
+                  <div className="px-6 py-4 sm:px-8 sm:py-4 bg-teal-50/80 border-t border-teal-100 rounded-b-2xl">
+                    <p className="text-teal-700 text-sm font-bold">
+                      More states and jurisdictions coming soon.
+                    </p>
+                  </div>
+                )}
               </div>
             )
           })}

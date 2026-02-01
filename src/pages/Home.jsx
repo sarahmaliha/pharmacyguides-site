@@ -1,27 +1,38 @@
 import Hero from '../components/Hero'
-import CareerPath from '../components/CareerPath'
 import ResourceLibrary from '../components/ResourceLibrary'
-import { Link } from 'react-router-dom'
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <CareerPath />
-      <section className="py-16 sm:py-24 bg-teal-50/50 border-y border-teal-100">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-display text-2xl sm:text-3xl font-bold text-slate-900 mb-4">
-            Study Guides & Digital Resources
+      <section
+        className="relative py-16 sm:py-24 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/how-i-help-banner.png')" }}
+      >
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-display text-2xl sm:text-3xl font-bold text-slate-900 text-center mb-10">
+            How I Help
           </h2>
-          <p className="text-slate-600 max-w-xl mx-auto mb-8">
-            Clinical study guides, industry CV templates, and fellowship trackers — all in one place.
-          </p>
-          <Link
-            to="/study-guides"
-            className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-teal-600 text-white font-semibold hover:bg-teal-700 transition-colors"
-          >
-            Browse All Resources
-          </Link>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+              <h3 className="font-display font-semibold text-slate-900 text-lg mb-2">Clear, Practical Study Guides</h3>
+              <p className="text-slate-600 text-sm">
+                Concise pharmacy resources designed to simplify complex topics for pharmacy school, licensure exams, and clinical rotations.
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+              <h3 className="font-display font-semibold text-slate-900 text-lg mb-2">Personalized Mentorship</h3>
+              <p className="text-slate-600 text-sm">
+                One-on-one virtual guidance for students and pharmacists navigating burnout, career pivots, or industry transitions.
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+              <h3 className="font-display font-semibold text-slate-900 text-lg mb-2">Real-Life Pharmacy Perspective</h3>
+              <p className="text-slate-600 text-sm">
+                Education rooted in lived experience — beyond textbooks and the "perfect path."
+              </p>
+            </div>
+          </div>
         </div>
       </section>
       <ResourceLibrary />

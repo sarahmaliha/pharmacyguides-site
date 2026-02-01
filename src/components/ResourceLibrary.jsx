@@ -1,22 +1,57 @@
 import { useState, useMemo } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { RxPill } from './icons/PharmaIcons'
+import { downloadGlossaryPdf } from '../utils/glossaryPdf'
 
-const CATEGORIES = ['All', 'Clinical Guides', 'Industry Pivot', 'Networking', 'Templates']
+const CATEGORIES = ['All', 'Study Guides', 'Industry Pivot', 'Networking']
 
 const INITIAL_RESOURCES = [
-  { id: 1, title: 'NAPLEX Core Topics Summary', category: 'Clinical Guides', description: 'Concise review of high-yield NAPLEX topics with key drug facts and clinical pearls.', tags: ['NAPLEX', 'Clinical'] },
-  { id: 2, title: 'MPJE State Law Overview', category: 'Clinical Guides', description: 'State-specific pharmacy law summaries for MPJE prep and licensure.', tags: ['MPJE', 'Law'] },
-  { id: 3, title: 'From Pharmacist to MSL: First Steps', category: 'Industry Pivot', description: 'A practical guide to assessing fit and building your industry narrative.', tags: ['MSL', 'Industry'] },
-  { id: 4, title: 'Industry Acronym Glossary', category: 'Industry Pivot', description: 'KPI, KOL, Medical Affairs, and 50+ terms every industry-bound pharmacist should know.', tags: ['Glossary', 'Industry'] },
-  { id: 5, title: 'LinkedIn Outreach Templates', category: 'Networking', description: 'Professional message templates for connecting with MSLs and recruiters.', tags: ['LinkedIn', 'Networking'] },
-  { id: 6, title: 'CV Template for Industry Roles', category: 'Templates', description: 'Resume/CV structure and wording optimized for Medical Affairs and MSL applications.', tags: ['CV', 'Resume'] },
-  { id: 7, title: 'Day in the Life: MSL', category: 'Industry Pivot', description: 'What a typical week looks like for a Medical Science Liaison.', tags: ['MSL', 'Career'] },
-  { id: 8, title: 'Pharma Fellowship Tracker', category: 'Templates', description: 'Timeline and checklist for fellowship applications and interviews.', tags: ['Fellowship', 'Applications'] },
+  { id: 1, title: 'NAPLEX Core Topics Summary', category: 'Study Guides', description: 'Concise review of high-yield NAPLEX topics with key drug facts and clinical pearls.', tags: ['NAPLEX', 'Clinical'] },
+  { id: 2, title: 'MPJE State Law Overview', category: 'Study Guides', description: 'State-specific pharmacy law summaries for MPJE prep and licensure.', tags: ['MPJE', 'Law'] },
+  { id: 7, title: 'Functional Areas', category: 'Industry Pivot', description: 'Understand the different areas within the pharmaceutical industry where you can shine', tags: ['MSL', 'Career'] },
+  { id: 3, title: 'Your Path to Becoming an MSL', category: 'Industry Pivot', description: 'A step-by-step roadmap from clinical pharmacy to Medical Science Liaison', tags: ['MSL', 'Industry'] },
+  { id: 4, title: 'Industry Acronym Glossary (Free)', category: 'Industry Pivot', description: 'KPI, KOL, Medical Affairs, and 50+ terms every industry-bound pharmacist should know.', tags: ['Glossary', 'Industry'] },
+  { id: 5, title: 'Linkedin Outreach Example', category: 'Networking', description: 'An example of how to connect with a recruiter/current employee on LinkedIn.', tags: ['LinkedIn', 'Networking'] },
 ]
 
+const OUTREACH_EXAMPLE = `Hi [Name],
+
+I came across your profile and noticed your path into [role/company]. As a pharmacist exploring a transition into [e.g., Medical Affairs / MSL], I’d be grateful for 10–15 minutes of your time to learn about your experience and any advice you might have for someone at my stage.
+
+I’m happy to work around your schedule and can send a calendar link if that’s easier. Thank you for considering—I really appreciate it.
+
+Best,
+[Your name]`
+
+const MSL_SECTION_ID = 'your-path-to-becoming-an-msl'
+const FUNCTIONAL_AREAS_SECTION_ID = 'functional-areas'
+
+function scrollToMslSection() {
+  document.getElementById(MSL_SECTION_ID)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
+
+function scrollToFunctionalAreasSection() {
+  document.getElementById(FUNCTIONAL_AREAS_SECTION_ID)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
+
+const SHOP_STUDY_GUIDES_SECTION_ID = 'shop-study-guides-on-etsy'
+const PHARMACY_LAW_MPJE_SECTION_ID = 'pharmacy-law-mpje-resources'
+
+function scrollToShopStudyGuidesSection() {
+  document.getElementById(SHOP_STUDY_GUIDES_SECTION_ID)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
+
+function scrollToPharmacyLawMpjeSection() {
+  document.getElementById(PHARMACY_LAW_MPJE_SECTION_ID)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
+
 export default function ResourceLibrary() {
+  const { pathname } = useLocation()
   const [search, setSearch] = useState('')
   const [category, setCategory] = useState('All')
+  const [outreachModalOpen, setOutreachModalOpen] = useState(false)
+  const isOnIndustryPivotPage = pathname === '/industry-pivot'
+  const isOnStudyGuidesPage = pathname === '/study-guides'
 
   const filtered = useMemo(() => {
     return INITIAL_RESOURCES.filter((r) => {
@@ -31,14 +66,50 @@ export default function ResourceLibrary() {
   }, [search, category])
 
   return (
-    <section className="py-16 sm:py-24 bg-slate-50 relative overflow-hidden">
+    <>
+      {outreachModalOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="outreach-modal-title"
+          onClick={() => setOutreachModalOpen(false)}
+        >
+          <div
+            className="bg-white rounded-2xl shadow-xl max-w-lg w-full max-h-[85vh] overflow-hidden flex flex-col"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="p-6 border-b border-slate-200 flex items-center justify-between">
+              <h3 id="outreach-modal-title" className="font-display font-semibold text-slate-900 text-lg">
+                Example outreach message
+              </h3>
+              <button
+                type="button"
+                onClick={() => setOutreachModalOpen(false)}
+                className="p-2 rounded-lg text-slate-500 hover:bg-slate-100 hover:text-slate-700 transition-colors"
+                aria-label="Close"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div className="p-6 overflow-y-auto flex-1">
+              <p className="text-slate-600 text-sm whitespace-pre-line font-medium">
+                {OUTREACH_EXAMPLE}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+      <section className="py-16 sm:py-24 bg-brand-mintLight/50 relative overflow-hidden">
       {/* Subtle pill pattern */}
       <div className="absolute inset-0 opacity-[0.03]" aria-hidden="true">
         <svg className="absolute w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="resource-pills" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
-              <ellipse cx="15" cy="30" rx="8" ry="2.5" fill="#0d9488" />
-              <ellipse cx="45" cy="10" rx="8" ry="2.5" fill="#0d9488" />
+              <path d="M 7 27.5 L 23 27.5 A 2.5 2.5 0 0 1 23 32.5 L 7 32.5 A 2.5 2.5 0 0 1 7 27.5 Z" fill="#aac0ff" />
+              <path d="M 37 7.5 L 53 7.5 A 2.5 2.5 0 0 1 53 12.5 L 37 12.5 A 2.5 2.5 0 0 1 37 7.5 Z" fill="#aac0ff" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#resource-pills)" />
@@ -50,7 +121,7 @@ export default function ResourceLibrary() {
             <RxPill className="w-6 h-6" />
           </span>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-slate-900">
-            MSL & Industry Resource Vault
+            Clinical and Industry Resource Vault
           </h2>
           <p className="mt-4 text-slate-600">
             Search and filter guides, templates, and tools for clinical prep and industry transition.
@@ -113,12 +184,98 @@ export default function ResourceLibrary() {
                   </span>
                 ))}
               </div>
-              <button
-                type="button"
-                className="w-full py-2.5 rounded-xl border-2 border-teal-500 text-teal-600 font-semibold text-sm hover:bg-teal-50 transition-colors"
-              >
-                Learn More
-              </button>
+              {resource.id === 1 ? (
+                isOnStudyGuidesPage ? (
+                  <button
+                    type="button"
+                    onClick={scrollToShopStudyGuidesSection}
+                    className="block w-full py-2.5 rounded-xl border-2 border-teal-500 text-teal-600 font-semibold text-sm hover:bg-teal-50 transition-colors text-center"
+                  >
+                    Learn More
+                  </button>
+                ) : (
+                  <Link
+                    to="/study-guides#shop-study-guides-on-etsy"
+                    className="block w-full py-2.5 rounded-xl border-2 border-teal-500 text-teal-600 font-semibold text-sm hover:bg-teal-50 transition-colors text-center"
+                  >
+                    Learn More
+                  </Link>
+                )
+              ) : resource.id === 2 ? (
+                isOnStudyGuidesPage ? (
+                  <button
+                    type="button"
+                    onClick={scrollToPharmacyLawMpjeSection}
+                    className="block w-full py-2.5 rounded-xl border-2 border-teal-500 text-teal-600 font-semibold text-sm hover:bg-teal-50 transition-colors text-center"
+                  >
+                    Learn More
+                  </button>
+                ) : (
+                  <Link
+                    to="/study-guides#pharmacy-law-mpje-resources"
+                    className="block w-full py-2.5 rounded-xl border-2 border-teal-500 text-teal-600 font-semibold text-sm hover:bg-teal-50 transition-colors text-center"
+                  >
+                    Learn More
+                  </Link>
+                )
+              ) : resource.id === 3 ? (
+                isOnIndustryPivotPage ? (
+                  <button
+                    type="button"
+                    onClick={scrollToMslSection}
+                    className="block w-full py-2.5 rounded-xl border-2 border-teal-500 text-teal-600 font-semibold text-sm hover:bg-teal-50 transition-colors text-center"
+                  >
+                    Learn More
+                  </button>
+                ) : (
+                  <Link
+                    to="/industry-pivot#your-path-to-becoming-an-msl"
+                    className="block w-full py-2.5 rounded-xl border-2 border-teal-500 text-teal-600 font-semibold text-sm hover:bg-teal-50 transition-colors text-center"
+                  >
+                    Learn More
+                  </Link>
+                )
+              ) : resource.id === 4 ? (
+                <button
+                  type="button"
+                  onClick={downloadGlossaryPdf}
+                  className="block w-full py-2.5 rounded-xl border-2 border-teal-500 text-teal-600 font-semibold text-sm hover:bg-teal-50 transition-colors text-center"
+                >
+                  Download Now
+                </button>
+              ) : resource.id === 5 ? (
+                <button
+                  type="button"
+                  onClick={() => setOutreachModalOpen(true)}
+                  className="block w-full py-2.5 rounded-xl border-2 border-teal-500 text-teal-600 font-semibold text-sm hover:bg-teal-50 transition-colors text-center"
+                >
+                  Click/Tap Here
+                </button>
+              ) : resource.id === 7 ? (
+                isOnIndustryPivotPage ? (
+                  <button
+                    type="button"
+                    onClick={scrollToFunctionalAreasSection}
+                    className="block w-full py-2.5 rounded-xl border-2 border-teal-500 text-teal-600 font-semibold text-sm hover:bg-teal-50 transition-colors text-center"
+                  >
+                    Learn More
+                  </button>
+                ) : (
+                  <Link
+                    to="/industry-pivot#functional-areas"
+                    className="block w-full py-2.5 rounded-xl border-2 border-teal-500 text-teal-600 font-semibold text-sm hover:bg-teal-50 transition-colors text-center"
+                  >
+                    Learn More
+                  </Link>
+                )
+              ) : (
+                <Link
+                  to="/study-guides"
+                  className="block w-full py-2.5 rounded-xl border-2 border-teal-500 text-teal-600 font-semibold text-sm hover:bg-teal-50 transition-colors text-center"
+                >
+                  Learn More
+                </Link>
+              )}
             </article>
           ))}
         </div>
@@ -130,5 +287,6 @@ export default function ResourceLibrary() {
         )}
       </div>
     </section>
+    </>
   )
 }

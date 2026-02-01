@@ -1,16 +1,10 @@
 import { Link } from 'react-router-dom'
-import NewsletterSignup from './NewsletterSignup'
 import { PillBottle } from './icons/PharmaIcons'
 
 export default function Footer() {
   return (
     <footer className="bg-slate-900 text-slate-300">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="mb-8 pb-8 border-b border-slate-700">
-          <p className="text-white font-display font-semibold text-sm mb-2">MSL Insight — Newsletter</p>
-          <p className="text-slate-400 text-sm mb-3">Weekly or monthly tips for industry-bound pharmacists.</p>
-          <NewsletterSignup variant="footer" />
-        </div>
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <Link to="/" className="flex items-center gap-2 w-fit">
             <span className="w-9 h-9 rounded-lg bg-teal-800 text-teal-300 flex items-center justify-center shrink-0" aria-hidden="true">

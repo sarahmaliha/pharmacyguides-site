@@ -1,12 +1,42 @@
+import { useEffect } from 'react'
 import CareerPath from '../components/CareerPath'
+import FunctionalAreas from '../components/FunctionalAreas'
 import ResourceLibrary from '../components/ResourceLibrary'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 export default function IndustryPivot() {
+  const { hash } = useLocation()
+
+  // When navigating to this page without a hash (e.g. "Start Your Industry Journey" button), scroll to top
+  useEffect(() => {
+    if (!hash) window.scrollTo(0, 0)
+  }, [hash])
+
+  useEffect(() => {
+    const sectionId =
+      hash === '#your-path-to-becoming-an-msl'
+        ? 'your-path-to-becoming-an-msl'
+        : hash === '#functional-areas'
+          ? 'functional-areas'
+          : null
+    if (sectionId) {
+      const el = document.getElementById(sectionId)
+      if (el) {
+        const timer = setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }, 100)
+        return () => clearTimeout(timer)
+      }
+    }
+  }, [hash])
+
   return (
     <main className="min-h-[60vh]">
-      <section className="py-12 sm:py-16 bg-gradient-to-b from-teal-50 to-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section
+        className="relative py-12 sm:py-16 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/how-i-help-banner.png')" }}
+      >
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-teal-600 font-medium text-sm uppercase tracking-wider mb-2">
             Industry Transition Roadmap
           </p>
@@ -14,7 +44,7 @@ export default function IndustryPivot() {
             Start Your Industry Journey
           </h1>
           <p className="text-slate-600 max-w-2xl mx-auto">
-            Whether you're a P4 student or a retail pharmacist with years of experience, there's a path to roles like Medical Science Liaison (MSL). Use the roadmap and resources below to plan your pivot.
+            Whether you're a pharmacy student or a practicing pharmacist with years of experience, there's a path to landing those highly sought-after industry roles. Use this page to <strong>plan your pivot</strong>!
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
@@ -26,6 +56,7 @@ export default function IndustryPivot() {
           </div>
         </div>
       </section>
+      <FunctionalAreas />
       <CareerPath />
       <ResourceLibrary />
     </main>

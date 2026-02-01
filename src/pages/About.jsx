@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom'
+import { TESTIMONIALS, ETSY_SHOP_REVIEWS_URL } from '../data/etsyReviews'
 
 export default function About() {
   return (
     <main className="min-h-[60vh]">
-      <section className="py-12 sm:py-20 bg-gradient-to-b from-teal-50 to-white">
+      <section className="py-12 sm:py-20 bg-gradient-to-b from-brand-mintLight to-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-center sm:gap-8 mb-8">
             <img
@@ -18,19 +19,19 @@ export default function About() {
                 About
               </p>
               <h1 className="font-display text-3xl sm:text-4xl font-bold text-slate-900">
-                Why I Do This
+                How It All Began
               </h1>
             </div>
           </div>
           <div className="prose prose-slate max-w-none text-slate-600 space-y-6">
             <p>
-              I'm Dr. Sarah — PharmD, RPh — and I built PharmacyGuides because I know how overwhelming pharmacy school, licensure exams, and clinical rotations can be. I also know what it's like to wonder: <em>Is there more than the path I'm on?</em>
+              I'm Dr. Sarah, PharmD, RPh — and I built PharmacyGuides because I remember exactly how overwhelming pharmacy school, licensing exams, and clinical training can feel. I've been in those late-night study sessions, high-pressure rotations, and moments of doubt where you wonder if you're on the right path — or if there's something more out there for you.
             </p>
             <p>
-              <strong>My pivot story:</strong> I transitioned from practicing pharmacist to Medical Science Liaison (MSL). That journey taught me that the gap between "pharmacist" and "industry" isn't a wall — it's a bridge. You need clarity on the steps, someone who's walked them, and resources that speak your language.
+              My journey didn't follow a straight line. I started in clinical pharmacy and later transitioned into a Medical Science Liaison role in industry. That pivot showed me something important: the gap between traditional pharmacy roles and industry isn't a wall — it's a bridge. You just need the right guidance, clear steps, and someone who understands both sides.
             </p>
             <p>
-              People buy into the mentor before the product. So here's the heart of it: education and content rooted in lived experience — beyond textbooks, titles, and the "perfect path." Whether you need study guides for NAPLEX/MPJE, a roadmap to industry, or one-on-one mentorship, I'm here to help you get there.
+              PharmacyGuides is built on real experience, not just theory. My goal is to make complex topics simpler, more practical, and easier to apply. Whether you're preparing for NAPLEX or MPJE, exploring new career paths, or looking for mentorship from someone who's been through it, I'm here to support your next step forward.
             </p>
           </div>
           <div className="mt-10 flex flex-wrap gap-4">
@@ -50,8 +51,11 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-24 bg-slate-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section
+        className="relative py-16 sm:py-24 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/how-i-help-banner.png')" }}
+      >
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-display text-2xl sm:text-3xl font-bold text-slate-900 text-center mb-10">
             How I Help
           </h2>
@@ -78,19 +82,39 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-24 bg-teal-50/50 border-t border-teal-100">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-display text-2xl font-bold text-slate-900 mb-4">
-            Testimonials
-          </h2>
-          <p className="text-slate-600 text-sm mb-8">
-            Success stories from pharmacists and students who've used the guides and mentorship to land industry roles. (Add your testimonials here.)
-          </p>
-          <div className="bg-white rounded-2xl border border-teal-100 p-6 text-left">
-            <p className="text-slate-600 italic mb-4">
-              "Dr. Sarah's roadmap and CV feedback were exactly what I needed. I landed my first MSL interview within three months."
+      <section className="py-16 sm:py-24 bg-brand-mintLight/70 border-t border-brand-skyPastel/60">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="font-display text-2xl sm:text-3xl font-bold text-slate-900 mb-4">
+              Testimonials
+            </h2>
+            <p className="text-slate-600 text-sm mb-4">
+              What pharmacists and students are saying about the study guides — 5-star reviews from our Etsy shop.
             </p>
-            <p className="text-sm font-medium text-slate-800">— Mentee name (role)</p>
+            <a
+              href={ETSY_SHOP_REVIEWS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-teal-600 hover:text-teal-700 font-medium text-sm"
+            >
+              View all reviews on Etsy →
+            </a>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {TESTIMONIALS.map(({ quote, author, rating }, i) => (
+              <div
+                key={i}
+                className="bg-white rounded-2xl border border-teal-100 p-6 text-left shadow-sm"
+              >
+                <div className="flex gap-0.5 mb-3" aria-label={`${rating} stars`}>
+                  {Array.from({ length: rating }).map((_, j) => (
+                    <span key={j} className="text-amber-400" aria-hidden>★</span>
+                  ))}
+                </div>
+                <p className="text-slate-600 italic mb-4">"{quote}"</p>
+                <p className="text-sm font-medium text-slate-800">— {author}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

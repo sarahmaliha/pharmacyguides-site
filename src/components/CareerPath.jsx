@@ -53,7 +53,7 @@ const steps = [
 
 export default function CareerPath() {
   return (
-    <section className="py-16 sm:py-24 bg-white">
+    <section id="your-path-to-becoming-an-msl" className="py-16 sm:py-24 bg-white scroll-mt-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-slate-900">

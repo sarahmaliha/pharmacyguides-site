@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import Hero from '../components/Hero'
 import PharmDPaths from '../components/PharmDPaths'
 import ResourceLibrary from '../components/ResourceLibrary'
@@ -5,6 +6,10 @@ import ResourceLibrary from '../components/ResourceLibrary'
 export default function Home() {
   return (
     <>
+      <Helmet>
+        <title>PharmacyGuides — Pharmacy Study Guides and Mentorship</title>
+        <meta name="description" content="Study guides, wellness tools, and one-on-one mentorship for pharmacy students and early professionals." />
+      </Helmet>
       <Hero />
       <section
         className="relative py-16 sm:py-24 bg-cover bg-center bg-no-repeat"

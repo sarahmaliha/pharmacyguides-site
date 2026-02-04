@@ -1,9 +1,14 @@
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { TESTIMONIALS, ETSY_SHOP_REVIEWS_URL } from '../data/etsyReviews'
 
 export default function About() {
   return (
     <main className="min-h-[60vh]">
+      <Helmet>
+        <title>About PharmacyGuides — Student Support and Education Mission</title>
+        <meta name="description" content="Learn about the mission behind PharmacyGuides and its commitment to mentoring and supporting pharmacy learners." />
+      </Helmet>
       <section className="py-12 sm:py-20 bg-gradient-to-b from-brand-mintLight to-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-center sm:gap-8 mb-8">

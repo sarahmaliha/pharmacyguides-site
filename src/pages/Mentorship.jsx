@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { Helmet } from 'react-helmet-async'
 
 const CALENDLY_SCRIPT_URL = 'https://assets.calendly.com/assets/external/widget.js'
 const CALENDLY_URL = 'https://calendly.com/pharmacyguidesllc/30min'
@@ -66,6 +67,10 @@ export default function Mentorship() {
       className="relative min-h-[60vh] py-12 sm:py-16 bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: "url('/how-i-help-banner.png')" }}
     >
+      <Helmet>
+        <title>Pharmacy Mentorship Sessions — 1:1 Student Support</title>
+        <meta name="description" content="Book a one-on-one pharmacy mentorship session for study strategy, career guidance, and exam support." />
+      </Helmet>
       <section className="relative max-w-[900px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center mb-10 sm:mb-12">
           <p className="text-teal-600 font-medium text-sm uppercase tracking-wider mb-2">

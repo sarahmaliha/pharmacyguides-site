@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import MoodCheck from '../components/wellness/MoodCheck'
 import TwoMinuteReset from '../components/wellness/TwoMinuteReset'
 import ReflectionPromptGenerator from '../components/wellness/ReflectionPromptGenerator'
@@ -5,6 +6,10 @@ import ReflectionPromptGenerator from '../components/wellness/ReflectionPromptGe
 export default function Wellness() {
   return (
     <main className="min-h-[60vh]">
+      <Helmet>
+        <title>Pharmacy Wellness Hub — Mental Health Support for Pharmacy Students</title>
+        <meta name="description" content="Interactive wellness tools and reset exercises designed for pharmacy students and healthcare trainees." />
+      </Helmet>
       <section className="py-12 sm:py-16 bg-gradient-to-b from-brand-mintLight to-white">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-teal-600 font-medium text-sm uppercase tracking-wider mb-2">

@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import StudyGuides from './pages/StudyGuides'
 import IndustryPivot from './pages/IndustryPivot'
 import Mentorship from './pages/Mentorship'
+import Wellness from './pages/Wellness'
 import About from './pages/About'
 import BlogPostSample from './pages/BlogPostSample'
 
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/study-guides" element={<StudyGuides />} />
           <Route path="/industry-pivot" element={<IndustryPivot />} />
           <Route path="/mentorship" element={<Mentorship />} />
+          <Route path="/wellness" element={<Wellness />} />
           <Route path="/about" element={<About />} />
           <Route path="/blog/retail-pharmacy-to-msl" element={<BlogPostSample />} />
         </Routes>

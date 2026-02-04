@@ -1,4 +1,5 @@
 import Hero from '../components/Hero'
+import PharmDPaths from '../components/PharmDPaths'
 import ResourceLibrary from '../components/ResourceLibrary'
 
 export default function Home() {
@@ -35,6 +36,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <PharmDPaths />
       <ResourceLibrary />
     </>
   )

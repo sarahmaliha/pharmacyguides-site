@@ -6,6 +6,7 @@ const navLinks = [
   { to: '/study-guides', label: 'Study Guides' },
   { to: '/industry-pivot', label: 'Industry Pivot' },
   { to: '/mentorship', label: 'Mentorship' },
+  { to: '/wellness', label: 'Wellness Hub' },
   { to: '/about', label: 'About' },
 ]
 

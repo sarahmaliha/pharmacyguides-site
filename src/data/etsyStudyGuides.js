@@ -22,7 +22,7 @@ export const STUDY_GUIDE_CATEGORIES = [
       { title: 'Endocrine and Inflammatory Bundle', url: listing(1248424127, 'endocrine-and-inflammatory-pharmacy') },
       { title: 'Ear Nose Throat Bundle', url: ETSY_SHOP_URL },
       { title: 'Neurology Bundle', url: listing(1235660806, 'neurology-pharmacy-bundle-2025-naplex') },
-      { title: 'Psych Bundle', url: listing(1214527446, 'psych-pharmacy-notes-bundle-naplex') },
+      { title: 'Psychiatry Bundle', url: listing(1214527446, 'psych-pharmacy-notes-bundle-naplex') },
       { title: 'Male & Female Health Bundle', url: ETSY_SHOP_URL },
       { title: 'Cardiology Bundle', url: listing(1224470988, 'cardiology-pharmacy-study-guide-bundle') },
       { title: 'Infectious Diseases Bundle', url: listing(1234364472, 'infectious-diseases-pharmacy-bundle-2025') },
@@ -44,7 +44,7 @@ export const STUDY_GUIDE_CATEGORIES = [
   {
     id: 'disease-state',
     name: 'Disease State & 1-Page Guides',
-    description: 'Clinical one-pagers by topic — cardiology, pulmonary, endocrine, psych, and more.',
+    description: 'Clinical one-pagers by topic — cardiology, pulmonary, endocrine, psychiatry, and more.',
     items: [
       { title: 'Diabetes Pharmacy Study Guide', url: listing(1246526471, 'diabetes-pharmacy-study-guide-for-naplex') },
       { title: 'Hypertension Pharmacy Study Guide', url: listing(1218278505, 'hypertension-pharmacy-study-guide-naplex') },

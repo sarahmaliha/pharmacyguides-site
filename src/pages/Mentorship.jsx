@@ -92,9 +92,9 @@ export default function Mentorship() {
               </svg>
             </span>
             <div>
-              <h2 className="font-display font-semibold text-slate-900 text-sm sm:text-base">
+              <h3 className="font-display font-semibold text-slate-900 text-sm sm:text-base">
                 Session Rate
-              </h2>
+              </h3>
               <p className="text-slate-600 text-sm mt-0.5">
                 Initial mentorship sessions are $20.
               </p>

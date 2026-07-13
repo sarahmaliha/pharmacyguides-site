@@ -1,6 +1,5 @@
 import { useRef, useEffect, useState } from 'react'
 import ResourceLibrary from '../components/ResourceLibrary'
-import BundleSampleModal from '../components/BundleSampleModal'
 import { useLocation } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { ETSY_SHOP_URL, RELAYED_SHOP_URL } from '../data/etsyStudyGuides'
@@ -12,7 +11,7 @@ const FADE_MS = 500
 const WHATS_INSIDE = [
   {
     title: '80+ clinical topics',
-    description: 'From PK/PD and ID to cardiology, psych, endocrine, and everything in between — organized for quick review.',
+    description: 'An organized compilation of disease-state one-pagers — from PK/PD and ID to cardiology, psych, endocrine, and more.',
   },
   {
     title: 'High-yield layouts',
@@ -130,7 +129,54 @@ export default function StudyGuides() {
         />
       </Helmet>
 
-      <BundleSampleModal open={sampleOpen} onClose={() => setSampleOpen(false)} />
+      {sampleOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="sample-guide-modal-title"
+          onClick={() => setSampleOpen(false)}
+        >
+          <div
+            className="bg-white rounded-2xl shadow-xl max-w-7xl w-full max-h-[90vh] overflow-hidden flex flex-col"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="p-4 border-b border-slate-200 flex items-center justify-between shrink-0 flex-wrap gap-2">
+              <h2 id="sample-guide-modal-title" className="font-display font-semibold text-slate-900 text-lg">
+                Sample guide — Diabetes (Type 1 & Type 2)
+              </h2>
+              <div className="flex items-center gap-2">
+                <a
+                  href="/sample-guide.png"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium text-teal-600 hover:text-teal-700"
+                >
+                  View full size
+                </a>
+                <button
+                  type="button"
+                  onClick={() => setSampleOpen(false)}
+                  className="p-2 rounded-lg text-slate-500 hover:bg-slate-100 hover:text-slate-700 transition-colors"
+                  aria-label="Close"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div className="overflow-auto flex-1 p-4 flex justify-center bg-slate-50">
+              <img
+                src="/sample-guide.png"
+                alt="Sample study guide: Diabetes (Type 1 & Type 2) — definitions, risk factors, diagnosis, treatment algorithm, insulin and non-insulin options"
+                className="max-w-full h-auto object-contain"
+                style={{ minWidth: 0 }}
+              />
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* 1. Hero */}
       <section className="relative py-12 sm:py-16 overflow-hidden bg-gradient-to-b from-brand-mintLight via-brand-skyLight/40 to-white">
@@ -150,7 +196,7 @@ export default function StudyGuides() {
             onClick={() => setSampleOpen(true)}
             className="mt-4 inline-flex items-center text-teal-600 font-semibold text-sm hover:text-teal-700"
           >
-            Preview a free sample from the Ultimate Bundle →
+            Preview a free sample one-pager (Diabetes) →
           </button>
         </div>
       </section>
@@ -184,7 +230,7 @@ export default function StudyGuides() {
                 The Ultimate Pharmacy Bundle
               </h2>
               <p className="text-slate-600 mb-6 leading-relaxed">
-                Your all-in-one companion for pharmacy school and board prep — 80+ topics in one organized, visual set so you can study smarter, quiz with classmates, and walk into exam day with less overwhelm.
+                Your all-in-one companion for pharmacy school and board prep — an organized compilation of disease-state one-pagers covering 80+ topics, so you can study smarter, quiz with classmates, and walk into exam day with less overwhelm.
               </p>
               <ul className="space-y-2.5 text-slate-700 mb-8">
                 {[
@@ -268,14 +314,14 @@ export default function StudyGuides() {
                 See a Sample
               </h2>
               <p className="text-slate-600 text-sm sm:text-base mb-6">
-                Preview a condensed Diabetes page from the Ultimate Pharmacy Bundle — the same high-yield style as the full guide.
+                See how a disease-state one-pager actually looks — this Diabetes guide is the same format used throughout the Ultimate Pharmacy Bundle.
               </p>
               <button
                 type="button"
                 onClick={() => setSampleOpen(true)}
                 className="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-teal-600 text-white font-semibold text-sm hover:bg-teal-700 transition-colors"
               >
-                Open sample preview
+                View sample one-pager
               </button>
             </div>
 

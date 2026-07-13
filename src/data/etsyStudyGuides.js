@@ -1,9 +1,9 @@
 /**
- * Etsy shop and study guide listings for PharmacyGuides.
- * Direct links to specific listings — add/remove items as your shop updates.
+ * Study guide shop URLs and (legacy) Etsy listing catalog for PharmacyGuides.
  */
 
 export const ETSY_SHOP_URL = 'https://www.etsy.com/shop/PharmacyGuides'
+export const RELAYED_SHOP_URL = 'https://www.myrelayed.com/pharmacyguides'
 
 function listing(id, slug) {
   return `https://www.etsy.com/listing/${id}/${slug}`

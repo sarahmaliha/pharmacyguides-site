@@ -34,7 +34,7 @@ function scrollToFunctionalAreasSection() {
   document.getElementById(FUNCTIONAL_AREAS_SECTION_ID)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
 }
 
-const SHOP_STUDY_GUIDES_SECTION_ID = 'shop-study-guides-on-etsy'
+const SHOP_STUDY_GUIDES_SECTION_ID = 'shop-study-guides'
 const PHARMACY_LAW_MPJE_SECTION_ID = 'pharmacy-law-mpje-resources'
 
 function scrollToShopStudyGuidesSection() {
@@ -195,7 +195,7 @@ export default function ResourceLibrary() {
                   </button>
                 ) : (
                   <Link
-                    to="/study-guides#shop-study-guides-on-etsy"
+                    to="/study-guides#shop-study-guides"
                     className="block w-full py-2.5 rounded-xl border-2 border-teal-500 text-teal-600 font-semibold text-sm hover:bg-teal-50 transition-colors text-center"
                   >
                     Learn More

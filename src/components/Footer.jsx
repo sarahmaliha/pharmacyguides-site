@@ -19,6 +19,7 @@ export default function Footer() {
           <nav className="flex flex-wrap gap-6">
             <Link to="/" className="hover:text-teal-400 transition-colors">Home</Link>
             <Link to="/study-guides" className="hover:text-teal-400 transition-colors">Study Guides</Link>
+            <a href="https://www.myrelayed.com/pharmacyguides" target="_blank" rel="noopener noreferrer" className="hover:text-teal-400 transition-colors">Shop on RelayED</a>
             <a href="https://www.etsy.com/shop/PharmacyGuides" target="_blank" rel="noopener noreferrer" className="hover:text-teal-400 transition-colors">Shop on Etsy</a>
             <Link to="/industry-pivot" className="hover:text-teal-400 transition-colors">Industry Pivot</Link>
             <Link to="/mentorship" className="hover:text-teal-400 transition-colors">Mentorship</Link>

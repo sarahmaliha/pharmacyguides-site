@@ -6,19 +6,21 @@ export default function About() {
   return (
     <main className="min-h-[60vh]">
       <Helmet>
-        <title>About PharmacyGuides — Student Support and Education Mission</title>
+        <title>About PharmacyGuides: Student Support and Education Mission</title>
         <meta name="description" content="Learn about the mission behind PharmacyGuides and its commitment to mentoring and supporting pharmacy learners." />
       </Helmet>
       <section className="py-12 sm:py-20 bg-gradient-to-b from-brand-mintLight to-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-center sm:gap-8 mb-8">
-            <img
-              src="/logo-dr-sarah.png"
-              alt="PharmacyGuides by Dr. Sarah, PharmD RPh"
-              className="w-40 h-auto mx-auto sm:mx-0 flex-shrink-0 rounded-2xl shadow-md"
-              width={160}
-              height={160}
-            />
+            <div className="mx-auto sm:mx-0 flex-shrink-0 w-40 h-40 sm:w-44 sm:h-44">
+              <img
+                src="/sarah-headshot.png?v=6"
+                alt="Dr. Sarah, PharmD, RPh, founder of PharmacyGuides"
+                className="w-full h-full object-contain drop-shadow-md"
+                width={176}
+                height={176}
+              />
+            </div>
             <div>
               <p className="text-teal-600 font-medium text-sm uppercase tracking-wider mb-2">
                 About
@@ -30,10 +32,10 @@ export default function About() {
           </div>
           <div className="prose prose-slate max-w-none text-slate-600 space-y-6">
             <p>
-              I'm Dr. Sarah, PharmD, RPh — and I built PharmacyGuides because I remember exactly how overwhelming pharmacy school, licensing exams, and clinical training can feel. I've been in those late-night study sessions, high-pressure rotations, and moments of doubt where you wonder if you're on the right path — or if there's something more out there for you.
+              I'm Dr. Sarah, PharmD, RPh, and I built PharmacyGuides because I remember exactly how overwhelming pharmacy school, licensing exams, and clinical training can feel. I've been in those late-night study sessions, high-pressure rotations, and moments of doubt where you wonder if you're on the right path, or if there's something more out there for you.
             </p>
             <p>
-              My journey didn't follow a straight line. I started in clinical pharmacy and later transitioned into a Medical Science Liaison role in industry. That pivot showed me something important: the gap between traditional pharmacy roles and industry isn't a wall — it's a bridge. You just need the right guidance, clear steps, and someone who understands both sides.
+              My journey didn't follow a straight line. I started in clinical pharmacy and later transitioned into a Medical Science Liaison role in industry. That pivot showed me something important: the gap between traditional pharmacy roles and industry isn't a wall. It's a bridge. You just need the right guidance, clear steps, and someone who understands both sides.
             </p>
             <p>
               PharmacyGuides is built on real experience, not just theory. My goal is to make complex topics simpler, more practical, and easier to apply. Whether you're preparing for NAPLEX or MPJE, exploring new career paths, or looking for mentorship from someone who's been through it, I'm here to support your next step forward.
@@ -80,7 +82,7 @@ export default function About() {
             <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
               <h3 className="font-display font-semibold text-slate-900 text-lg mb-2">Real-Life Pharmacy Perspective</h3>
               <p className="text-slate-600 text-sm">
-                Education rooted in lived experience — beyond textbooks and the "perfect path."
+                Education rooted in lived experience, beyond textbooks and the "perfect path."
               </p>
             </div>
           </div>
@@ -94,7 +96,7 @@ export default function About() {
               Testimonials
             </h2>
             <p className="text-slate-600 text-sm mb-4">
-              What pharmacists and students are saying about the study guides — 5-star reviews from our Etsy shop.
+              What pharmacists and students are saying about the study guides, including 5-star reviews from our Etsy shop.
             </p>
             <a
               href={ETSY_SHOP_REVIEWS_URL}
@@ -117,7 +119,7 @@ export default function About() {
                   ))}
                 </div>
                 <p className="text-slate-600 italic mb-4">"{quote}"</p>
-                <p className="text-sm font-medium text-slate-800">— {author}</p>
+                <p className="text-sm font-medium text-slate-800">- {author}</p>
               </div>
             ))}
           </div>

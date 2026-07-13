@@ -61,7 +61,7 @@ export default function BlogPostTemplate({
           )}
         </header>
 
-        {/* High-res header image slot — replace with real image URL for production og:image */}
+        {/* High-res header image slot - replace with real image URL for production og:image */}
         <div className="aspect-video rounded-2xl bg-teal-100 mb-10 overflow-hidden">
           <img
             src={image}

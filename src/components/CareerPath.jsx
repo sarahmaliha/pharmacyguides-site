@@ -60,7 +60,7 @@ export default function CareerPath() {
             Your Path to Becoming an MSL
           </h2>
           <p className="mt-4 text-slate-600">
-            A clear, step-by-step roadmap from clinical pharmacy to Medical Science Liaison — built from lived experience.
+            A clear, step-by-step roadmap from clinical pharmacy to Medical Science Liaison, built from lived experience.
           </p>
         </div>
 

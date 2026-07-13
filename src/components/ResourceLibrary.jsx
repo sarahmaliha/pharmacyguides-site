@@ -16,9 +16,9 @@ const INITIAL_RESOURCES = [
 
 const OUTREACH_EXAMPLE = `Hi [Name],
 
-I came across your profile and noticed your path into [role/company]. As a pharmacist exploring a transition into [e.g., Medical Affairs / MSL], I’d be grateful for 10–15 minutes of your time to learn about your experience and any advice you might have for someone at my stage.
+I came across your profile and noticed your path into [role/company]. As a pharmacist exploring a transition into [e.g., Medical Affairs / MSL], I’d be grateful for 10-15 minutes of your time to learn about your experience and any advice you might have for someone at my stage.
 
-I’m happy to work around your schedule and can send a calendar link if that’s easier. Thank you for considering—I really appreciate it.
+I’m happy to work around your schedule and can send a calendar link if that’s easier. Thank you for considering. I really appreciate it.
 
 Best,
 [Your name]`

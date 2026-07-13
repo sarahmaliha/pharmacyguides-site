@@ -30,7 +30,7 @@ export default function PharmDPaths() {
           Paths a PharmD Can Take
         </h2>
         <p className="text-slate-600 text-center max-w-2xl mx-auto mb-12 text-sm sm:text-base">
-          From community and clinical practice to industry — explore the breadth of career options.
+          From community and clinical practice to industry, explore the breadth of career options.
         </p>
 
         {/* Flowchart: central PharmD node + three branches */}

@@ -126,7 +126,7 @@ function BoxBreathingCard() {
         {isActive ? (
           <>
             <p className="text-sm font-medium text-teal-700" aria-live="polite">
-              Step {stepIndex + 1} of 4: {step.label} — {count} of {step.count}
+              Step {stepIndex + 1} of 4: {step.label} ({count} of {step.count})
             </p>
             <div className="h-2 rounded-full bg-slate-100 overflow-hidden">
               <div

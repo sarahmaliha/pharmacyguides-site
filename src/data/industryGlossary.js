@@ -1,5 +1,5 @@
 /**
- * Industry Acronym Glossary — terms every industry-bound pharmacist should know.
+ * Industry Acronym Glossary - terms every industry-bound pharmacist should know.
  * Used for the Resource Library glossary card and PDF download.
  */
 export const INDUSTRY_GLOSSARY = [
@@ -74,4 +74,4 @@ export const INDUSTRY_GLOSSARY = [
 ]
 
 export const GLOSSARY_TITLE = 'Industry Acronym Glossary (Free)'
-export const GLOSSARY_SUBTITLE = 'Terms every industry-bound pharmacist should know — PharmacyGuides, LLC'
+export const GLOSSARY_SUBTITLE = 'Terms every industry-bound pharmacist should know | PharmacyGuides, LLC'

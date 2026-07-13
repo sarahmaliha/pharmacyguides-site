@@ -44,7 +44,7 @@ export const STUDY_GUIDE_CATEGORIES = [
   {
     id: 'disease-state',
     name: 'Disease State & 1-Page Guides',
-    description: 'Clinical one-pagers by topic — cardiology, pulmonary, endocrine, psychiatry, and more.',
+    description: 'Clinical one-pagers by topic: cardiology, pulmonary, endocrine, psychiatry, and more.',
     items: [
       { title: 'Diabetes Pharmacy Study Guide', url: listing(1246526471, 'diabetes-pharmacy-study-guide-for-naplex') },
       { title: 'Hypertension Pharmacy Study Guide', url: listing(1218278505, 'hypertension-pharmacy-study-guide-naplex') },

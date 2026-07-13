@@ -8,11 +8,11 @@ const FADE_DELAY_STAGGER = 1
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-r from-brand-mint via-brand-mintLight to-brand-skyPastel">
-      {/* Top banner: blends into nav — Dr. Sarah / PharmacyGuides cover */}
+      {/* Top banner: blends into nav - Dr. Sarah / PharmacyGuides cover */}
       <div className="w-full">
         <img
           src="/hero-banner.png"
-          alt="PharmacyGuides by Dr. Sarah, PharmD RPh — Hi, I'm Dr. Sarah. I support pharmacy students and pharmacists at every stage."
+          alt="PharmacyGuides by Dr. Sarah, PharmD RPh. Hi, I'm Dr. Sarah. I support pharmacy students and pharmacists at every stage."
           className="w-full h-auto object-cover object-center"
           width={1200}
           height={400}
@@ -28,7 +28,7 @@ export default function Hero() {
               <span className="text-teal-600">beyond.</span>
             </h1>
             <p className="mt-6 text-lg text-slate-600 max-w-xl">
-              Concise guides on 65+ clinical topics, up-to-date NAPLEX & MPJE review, quick reference for rotations — and a clear path from pharmacist to industry roles like MSL.
+              Concise guides on 65+ clinical topics, up-to-date NAPLEX & MPJE review, and quick reference for rotations, plus a clear path from pharmacist to industry roles like MSL.
             </p>
             <ul className="mt-8 space-y-3 text-slate-700">
               {[
@@ -62,7 +62,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* 5 reviews — vertical column, staggered fade-in; wider to align with left section */}
+          {/* 5 reviews - vertical column, staggered fade-in; wider to align with left section */}
           <div className="mt-12 lg:mt-0 lg:flex-1 lg:min-w-0 lg:max-w-xl flex flex-col gap-3 lg:min-h-0">
             {TESTIMONIALS.map((review, i) => (
               <blockquote
@@ -81,7 +81,7 @@ export default function Hero() {
                   "{review.quote}"
                 </p>
                 <footer className="mt-1.5 text-[11px] font-medium text-slate-600">
-                  — {review.author}
+                  - {review.author}
                 </footer>
               </blockquote>
             ))}

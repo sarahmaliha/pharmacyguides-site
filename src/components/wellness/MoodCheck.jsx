@@ -13,7 +13,7 @@ const MOOD_CONTENT = {
     actionStep: "Take one small moment to notice what feels good right now.",
   },
   good: {
-    message: "Thanks for checking in. You’re doing fine — take it one step at a time.",
+    message: "Thanks for checking in. You’re doing fine. Take it one step at a time.",
     actionStep: "Pick one thing you can do in the next 10 minutes that would feel supportive.",
   },
   meh: {
@@ -48,7 +48,7 @@ export default function MoodCheck() {
         Mood Check
       </h2>
       <p className="text-slate-600 text-sm sm:text-base mb-6">
-        How are you feeling right now? Pick what fits — no judgment, just a gentle check-in.
+        How are you feeling right now? Pick what fits. No judgment, just a gentle check-in.
       </p>
 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">

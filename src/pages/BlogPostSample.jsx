@@ -29,7 +29,7 @@ export default function BlogPostSample() {
       ]}
     >
       <p>
-        Making the jump from retail pharmacy to Medical Science Liaison (MSL) can feel daunting — but it's a well-trodden path. I've walked it myself, and here’s how I think about the transition and what I tell pharmacists who are considering it.
+        Making the jump from retail pharmacy to Medical Science Liaison (MSL) can feel daunting, but it's a well-trodden path. I've walked it myself, and here’s how I think about the transition and what I tell pharmacists who are considering it.
       </p>
 
       <h2>Why MSL?</h2>
@@ -44,7 +44,7 @@ export default function BlogPostSample() {
 
       <h2>Networking That Actually Works</h2>
       <p>
-        Reach out to MSLs and Medical Affairs professionals on LinkedIn with a short, genuine message. Ask for a 15-minute informational chat — not a job. Over time, those conversations build credibility and often lead to referrals when roles open up.
+        Reach out to MSLs and Medical Affairs professionals on LinkedIn with a short, genuine message. Ask for a 15-minute informational chat, not a job. Over time, those conversations build credibility and often lead to referrals when roles open up.
       </p>
 
       <h2>Your CV in Industry Language</h2>
@@ -58,7 +58,7 @@ export default function BlogPostSample() {
       </p>
 
       <p>
-        The transition is doable. With a clear roadmap, consistent networking, and a tailored application, you can land your first industry role. If you want one-on-one guidance, consider a mentorship session — we can map your situation and next steps together.
+        The transition is doable. With a clear roadmap, consistent networking, and a tailored application, you can land your first industry role. If you want one-on-one guidance, consider a mentorship session. We can map your situation and next steps together.
       </p>
     </BlogPostTemplate>
   )

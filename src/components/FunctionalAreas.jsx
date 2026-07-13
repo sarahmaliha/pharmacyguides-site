@@ -90,7 +90,7 @@ export default function FunctionalAreas() {
             Understand the Functional Areas of the Pharma World
           </h2>
           <p className="mt-4 text-slate-600">
-            Where pharmacists can apply their expertise beyond the pharmacy — from Medical Affairs to R&D, regulatory, and more.
+            Where pharmacists can apply their expertise beyond the pharmacy, from Medical Affairs to R&D, regulatory, and more.
           </p>
         </div>
 

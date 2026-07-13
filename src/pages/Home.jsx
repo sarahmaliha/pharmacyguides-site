@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>PharmacyGuides — Pharmacy Study Guides and Mentorship</title>
+        <title>PharmacyGuides: Pharmacy Study Guides and Mentorship</title>
         <meta name="description" content="Study guides, wellness tools, and one-on-one mentorship for pharmacy students and early professionals." />
       </Helmet>
       <Hero />
@@ -35,7 +35,7 @@ export default function Home() {
             <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
               <h3 className="font-display font-semibold text-slate-900 text-lg mb-2">Real-Life Pharmacy Perspective</h3>
               <p className="text-slate-600 text-sm">
-                Education rooted in lived experience — beyond textbooks and the "perfect path."
+                Education rooted in lived experience, beyond textbooks and the "perfect path."
               </p>
             </div>
           </div>

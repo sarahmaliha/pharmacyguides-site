@@ -11,11 +11,11 @@ const FADE_MS = 500
 const WHATS_INSIDE = [
   {
     title: '80+ clinical topics',
-    description: 'An organized compilation of disease-state one-pagers — from PK/PD and ID to cardiology, psych, endocrine, and more.',
+    description: 'An organized compilation of disease-state one-pagers, from PK/PD and ID to cardiology, psych, endocrine, and more.',
   },
   {
     title: 'High-yield layouts',
-    description: 'Tables, algorithms, and bullet points that help you quiz, cram, and retain — without drowning in textbooks.',
+    description: 'Tables, algorithms, and bullet points that help you quiz, cram, and retain without drowning in textbooks.',
   },
   {
     title: 'Built for NAPLEX & rotations',
@@ -23,11 +23,11 @@ const WHATS_INSIDE = [
   },
   {
     title: 'Digital & ready anywhere',
-    description: 'Download once, study on your laptop or tablet — no shipping, no waiting.',
+    description: 'Download once, study on your laptop or tablet. No shipping, no waiting.',
   },
   {
     title: 'Created by a PharmD',
-    description: 'Crafted from lived student and pharmacist experience — what actually helps when time is short.',
+    description: 'Crafted from lived student and pharmacist experience: what actually helps when time is short.',
   },
 ]
 
@@ -122,10 +122,10 @@ export default function StudyGuides() {
   return (
     <main className="min-h-[60vh]">
       <Helmet>
-        <title>Pharmacy Study Guides — Ultimate Bundle on RelayED & Etsy</title>
+        <title>Pharmacy Study Guides: Ultimate Bundle on RelayED & Etsy</title>
         <meta
           name="description"
-          content="Shop PharmacyGuides study tools on RelayED and Etsy. Featured: the Ultimate Pharmacy Bundle — high-yield clinical guides for NAPLEX, rotations, and pharmacy school."
+          content="Shop PharmacyGuides study tools on RelayED and Etsy. Featured: the Ultimate Pharmacy Bundle, high-yield clinical guides for NAPLEX, rotations, and pharmacy school."
         />
       </Helmet>
 
@@ -143,7 +143,7 @@ export default function StudyGuides() {
           >
             <div className="p-4 border-b border-slate-200 flex items-center justify-between shrink-0 flex-wrap gap-2">
               <h2 id="sample-guide-modal-title" className="font-display font-semibold text-slate-900 text-lg">
-                Sample guide — Diabetes (Type 1 & Type 2)
+                Sample guide: Diabetes (Type 1 & Type 2)
               </h2>
               <div className="flex items-center gap-2">
                 <a
@@ -169,7 +169,7 @@ export default function StudyGuides() {
             <div className="overflow-auto flex-1 p-4 flex justify-center bg-slate-50">
               <img
                 src="/sample-guide.png"
-                alt="Sample study guide: Diabetes (Type 1 & Type 2) — definitions, risk factors, diagnosis, treatment algorithm, insulin and non-insulin options"
+                alt="Sample study guide: Diabetes (Type 1 & Type 2), covering definitions, risk factors, diagnosis, treatment algorithm, insulin and non-insulin options"
                 className="max-w-full h-auto object-contain"
                 style={{ minWidth: 0 }}
               />
@@ -188,7 +188,7 @@ export default function StudyGuides() {
             Study Guides & Clinical Resources
           </h1>
           <p className="text-slate-600 text-base sm:text-lg max-w-2xl mb-8">
-            Concise, high-yield pharmacy study tools for NAPLEX, MPJE, and rotations — available on RelayED and Etsy. Same guides, your choice of shop.
+            Concise, high-yield pharmacy study tools for NAPLEX, MPJE, and rotations, available on RelayED and Etsy. Same guides, your choice of shop.
           </p>
           <ShopButtons />
           <button
@@ -212,7 +212,7 @@ export default function StudyGuides() {
               <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-teal-100/80 to-brand-skyPastel/50 blur-sm" aria-hidden />
               <img
                 src="/ultimate-bundle-cover.png"
-                alt="Ultimate Pharmacy Bundle 2026 Edition cover — PharmacyGuides by Dr. Sarah, PharmD RPh"
+                alt="Ultimate Pharmacy Bundle 2026 Edition cover by PharmacyGuides, Dr. Sarah, PharmD RPh"
                 className="relative w-full rounded-2xl shadow-lg border border-slate-200/80 object-cover"
                 width={800}
                 height={1000}
@@ -230,13 +230,13 @@ export default function StudyGuides() {
                 The Ultimate Pharmacy Bundle
               </h2>
               <p className="text-slate-600 mb-6 leading-relaxed">
-                Your all-in-one companion for pharmacy school and board prep — an organized compilation of disease-state one-pagers covering 80+ topics, so you can study smarter, quiz with classmates, and walk into exam day with less overwhelm.
+                Your all-in-one companion for pharmacy school and board prep. It's an organized compilation of disease-state one-pagers covering 80+ topics, so you can study smarter, quiz with classmates, and walk into exam day with less overwhelm.
               </p>
               <ul className="space-y-2.5 text-slate-700 mb-8">
                 {[
                   'High-yield disease-state coverage in one download',
                   'Layouts built for quick review and quizzing',
-                  'Trusted by students — including first-time NAPLEX passers',
+                  'Trusted by students, including first-time NAPLEX passers',
                   'Updated 2026 edition',
                 ].map((item) => (
                   <li key={item} className="flex gap-3">
@@ -258,7 +258,7 @@ export default function StudyGuides() {
             What&apos;s Inside
           </h2>
           <p className="text-slate-600 text-center max-w-2xl mx-auto mb-10">
-            From infectious disease to cardiology, psychiatry, endocrine, and more — organized the way pharmacists actually need to learn it.
+            From infectious disease to cardiology, psychiatry, endocrine, and more, organized the way pharmacists actually need to learn it.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {WHATS_INSIDE.map((card) => (
@@ -284,19 +284,19 @@ export default function StudyGuides() {
           </h2>
           <div className="space-y-5 text-slate-600 leading-relaxed">
             <p>
-              As a pharmacy student, I was drowning in dense textbooks and scattered notes — and I needed something clearer. So I started building my own study guides: visual, organized, and actually enjoyable to learn from.
+              As a pharmacy student, I was drowning in dense textbooks and scattered notes, and I needed something clearer. So I started building my own study guides: visual, organized, and actually enjoyable to learn from.
             </p>
             <p>
-              Classmates asked to use them. We quizzed each other from the pages, and study sessions became sharper and more collaborative. The results spoke for themselves — including a friend who used the Ultimate Bundle and passed the NAPLEX on the first try.
+              Classmates asked to use them. We quizzed each other from the pages, and study sessions became sharper and more collaborative. The results spoke for themselves, including a friend who used the Ultimate Bundle and passed the NAPLEX on the first try.
             </p>
             <p>
-              That momentum became PharmacyGuides. Today these digital guides are designed to help you ace pharmacy school, rotations, and boards — so you can study smarter, retain more, and move forward with confidence.
+              That momentum became PharmacyGuides. Today these digital guides are designed to help you ace pharmacy school, rotations, and boards so you can study smarter, retain more, and move forward with confidence.
             </p>
           </div>
           <blockquote className="mt-8 rounded-2xl border border-teal-100 bg-teal-50/60 px-5 py-4 text-teal-900 italic">
-            “I built these because I needed something clearer, too — and I still believe studying should feel doable, not draining.”
+            “I built these because I needed something clearer, too, and I still believe studying should feel doable, not draining.”
             <footer className="mt-2 text-sm not-italic font-medium text-teal-700">
-              — Dr. Sarah, PharmD, RPh
+              - Dr. Sarah, PharmD, RPh
             </footer>
           </blockquote>
         </div>
@@ -314,7 +314,7 @@ export default function StudyGuides() {
                 See a Sample
               </h2>
               <p className="text-slate-600 text-sm sm:text-base mb-6">
-                See how a disease-state one-pager actually looks — this Diabetes guide is the same format used throughout the Ultimate Pharmacy Bundle.
+                See how a disease-state one-pager actually looks. This Diabetes guide is the same format used throughout the Ultimate Pharmacy Bundle.
               </p>
               <button
                 type="button"
@@ -345,7 +345,7 @@ export default function StudyGuides() {
                         ))}
                       </div>
                       <p className="text-slate-600 italic leading-relaxed">&ldquo;{quote}&rdquo;</p>
-                      <p className="mt-3 text-sm font-medium text-slate-500">— {author}</p>
+                      <p className="mt-3 text-sm font-medium text-slate-500">- {author}</p>
                     </>
                   )
                 })()}
@@ -373,7 +373,7 @@ export default function StudyGuides() {
                 Disease-State Bundles
               </h3>
               <p className="text-slate-600 text-sm flex-1 mb-4">
-                Focused sets for cardio, pulmonary, ID, psych, endocrine, and more — available on RelayED and Etsy.
+                Focused sets for cardio, pulmonary, ID, psych, endocrine, and more, available on RelayED and Etsy.
               </p>
               <div className="flex flex-wrap gap-3 text-sm font-semibold">
                 <a href={RELAYED_SHOP_URL} target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700">
@@ -393,7 +393,7 @@ export default function StudyGuides() {
                 MPJE Resources
               </h3>
               <p className="text-slate-600 text-sm flex-1 mb-4">
-                Virginia MPJE, DC MPJE, and the DC + Virginia bundle — plus federal law one-pagers in the shops.
+                Virginia MPJE, DC MPJE, and the DC + Virginia bundle, plus federal law one-pagers in the shops.
               </p>
               <div className="flex flex-wrap gap-3 text-sm font-semibold">
                 <a href={RELAYED_SHOP_URL} target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700">
@@ -432,7 +432,7 @@ export default function StudyGuides() {
             Ready to Shop?
           </h2>
           <p className="text-teal-50/90 mb-8">
-            Same PharmacyGuides resources — pick the storefront that works for you.
+            Same PharmacyGuides resources. Pick the storefront that works for you.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <a

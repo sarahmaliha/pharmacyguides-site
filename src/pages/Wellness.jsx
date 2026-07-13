@@ -7,7 +7,7 @@ export default function Wellness() {
   return (
     <main className="min-h-[60vh]">
       <Helmet>
-        <title>Pharmacy Wellness Hub — Mental Health Support for Pharmacy Students</title>
+        <title>Pharmacy Wellness Hub: Mental Health Support for Pharmacy Students</title>
         <meta name="description" content="Interactive wellness tools and reset exercises designed for pharmacy students and healthcare trainees." />
       </Helmet>
       <section className="py-12 sm:py-16 bg-gradient-to-b from-brand-mintLight to-white">

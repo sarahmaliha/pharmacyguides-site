@@ -52,7 +52,7 @@ export function RxPill({ className = 'w-5 h-5', ...props }) {
   )
 }
 
-/** Simple capsule shape for list bullets — pill with two rounded ends */
+/** Simple capsule shape for list bullets - pill with two rounded ends */
 export function CapsuleBullet({ className = 'w-2.5 h-2.5', ...props }) {
   return (
     <svg className={`${iconClass} ${className}`} viewBox="0 0 12 4" fill="currentColor" aria-hidden="true" {...props}>
@@ -61,7 +61,7 @@ export function CapsuleBullet({ className = 'w-2.5 h-2.5', ...props }) {
   )
 }
 
-/** Pill/capsule icon for branding — horizontal pill with two rounded ends */
+/** Pill/capsule icon for branding - horizontal pill with two rounded ends */
 export function Pill({ className = 'w-5 h-5', ...props }) {
   return (
     <svg className={`${iconClass} ${className}`} viewBox="0 0 24 10" fill="currentColor" aria-hidden="true" {...props}>

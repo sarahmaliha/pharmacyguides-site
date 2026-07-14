@@ -128,14 +128,14 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-[minmax(0,200px)_1fr] gap-8 sm:gap-10 items-center">
             <img
               src="/ultimate-bundle-cover.png"
-              alt="Ultimate Pharmacy Bundle 2026 Edition cover"
+              alt="Ultimate Pharmacy Bundle 2027 Edition cover"
               className="w-44 sm:w-full max-w-[200px] mx-auto rounded-xl shadow-md border border-slate-200/80"
               width={200}
               height={250}
             />
             <div className="text-center sm:text-left">
               <p className="text-teal-600 font-medium text-sm uppercase tracking-wider mb-2">
-                Bestseller
+                Bestseller · 2027 Edition
               </p>
               <h2 className="font-display text-2xl sm:text-3xl font-bold text-slate-900 mb-3">
                 The Ultimate Pharmacy Bundle

@@ -212,13 +212,13 @@ export default function StudyGuides() {
               <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-teal-100/80 to-brand-skyPastel/50 blur-sm" aria-hidden />
               <img
                 src="/ultimate-bundle-cover.png"
-                alt="Ultimate Pharmacy Bundle 2026 Edition cover by PharmacyGuides, Dr. Sarah, PharmD RPh"
+                alt="Ultimate Pharmacy Bundle 2027 Edition cover by PharmacyGuides, Dr. Sarah, PharmD RPh"
                 className="relative w-full rounded-2xl shadow-lg border border-slate-200/80 object-cover"
                 width={800}
                 height={1000}
               />
               <p className="mt-3 text-center text-xs font-semibold uppercase tracking-wider text-teal-600">
-                Bestseller · 2026 Edition
+                Bestseller · 2027 Edition
               </p>
             </div>
 

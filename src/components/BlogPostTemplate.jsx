@@ -18,7 +18,7 @@ import { Link } from 'react-router-dom'
 export default function BlogPostTemplate({
   title = 'Blog Post Title',
   description = 'Meta description for SEO and social sharing.',
-  image = '/og-blog-default.jpg',
+  image,
   publishedAt,
   author = { name: 'Dr. Sarah', title: 'PharmD, RPh · PharmacyGuides, LLC' },
   keyTakeaways = [],
@@ -36,16 +36,23 @@ export default function BlogPostTemplate({
         <link rel="canonical" href={canonical} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content={image} />
+        {image && <meta property="og:image" content={image} />}
         <meta property="og:type" content="article" />
         {publishedAt && <meta property="article:published_time" content={publishedAt} />}
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={image} />
+        {image && <meta name="twitter:image" content={image} />}
       </Helmet>
 
       <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <Link
+          to="/blog"
+          className="inline-flex text-sm font-medium text-teal-600 hover:text-teal-700 mb-6"
+        >
+          ← Back to Blog
+        </Link>
+
         <header className="mb-10">
           <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
             {title}
@@ -61,17 +68,21 @@ export default function BlogPostTemplate({
           )}
         </header>
 
-        {/* High-res header image slot - replace with real image URL for production og:image */}
-        <div className="aspect-video rounded-2xl bg-teal-100 mb-10 overflow-hidden">
-          <img
-            src={image}
-            alt=""
-            className="w-full h-full object-cover"
-            onError={(e) => { e.target.onerror = null; e.target.style.display = 'none' }}
-          />
-        </div>
+        {image && (
+          <div className="aspect-video rounded-2xl bg-teal-100 mb-10 overflow-hidden">
+            <img
+              src={image}
+              alt=""
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                e.target.onerror = null
+                e.target.style.display = 'none'
+              }}
+            />
+          </div>
+        )}
 
-        <div className="prose prose-slate prose-lg max-w-none">
+        <div className="space-y-5 text-slate-700 text-base sm:text-lg leading-relaxed [&_h2]:font-display [&_h2]:text-slate-900 [&_h2]:font-semibold [&_h2]:text-xl [&_h2]:sm:text-2xl [&_h2]:mt-10 [&_h2]:mb-3 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-2 [&_li]:text-slate-700 [&_a]:text-teal-600 [&_a]:font-medium [&_a]:hover:text-teal-700 [&_a]:underline-offset-2 hover:[&_a]:underline">
           {children}
         </div>
 

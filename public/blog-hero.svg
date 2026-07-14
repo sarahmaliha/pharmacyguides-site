@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="bg" x1="40" y1="20" x2="440" y2="340" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#e0f7f2"/>
+      <stop offset="1" stop-color="#ccfbf1"/>
+    </linearGradient>
+    <linearGradient id="page" x1="140" y1="60" x2="340" y2="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#f0fdfa"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="360" rx="32" fill="url(#bg)"/>
+  <circle cx="392" cy="72" r="48" fill="#99f6e4" opacity="0.55"/>
+  <circle cx="78" cy="286" r="36" fill="#5eead4" opacity="0.35"/>
+  <!-- Notebook -->
+  <g transform="translate(108 48)">
+    <rect x="36" y="18" width="196" height="248" rx="16" fill="url(#page)" stroke="#99f6e4" stroke-width="3"/>
+    <rect x="18" y="10" width="36" height="264" rx="12" fill="#0d9488"/>
+    <circle cx="36" cy="64" r="6" fill="#ccfbf1"/>
+    <circle cx="36" cy="112" r="6" fill="#ccfbf1"/>
+    <circle cx="36" cy="160" r="6" fill="#ccfbf1"/>
+    <circle cx="36" cy="208" r="6" fill="#ccfbf1"/>
+    <path d="M78 68h126M78 96h118M78 124h108M78 152h120M78 180h92M78 208h110" stroke="#99f6e4" stroke-width="6" stroke-linecap="round"/>
+    <path d="M78 236h74" stroke="#14b8a6" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <!-- Floating pill -->
+  <g transform="translate(336 214) rotate(-28)">
+    <rect x="0" y="0" width="96" height="36" rx="18" fill="#0d9488"/>
+    <rect x="48" y="0" width="48" height="36" rx="18" fill="#5eead4"/>
+  </g>
+  <!-- Small accent pill -->
+  <g transform="translate(48 92) rotate(18)">
+    <rect x="0" y="0" width="64" height="24" rx="12" fill="#14b8a6" opacity="0.85"/>
+    <rect x="32" y="0" width="32" height="24" rx="12" fill="#e0f7f2"/>
+  </g>
+</svg>

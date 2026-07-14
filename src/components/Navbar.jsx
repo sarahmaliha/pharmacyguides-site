@@ -7,8 +7,14 @@ const navLinks = [
   { to: '/industry-pivot', label: 'Industry Pivot' },
   { to: '/mentorship', label: 'Mentorship' },
   { to: '/wellness', label: 'Wellness Hub' },
+  { to: '/blog', label: 'Blog' },
   { to: '/about', label: 'About' },
 ]
+
+function isActivePath(pathname, to) {
+  if (to === '/') return pathname === '/'
+  return pathname === to || pathname.startsWith(`${to}/`)
+}
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -29,7 +35,7 @@ export default function Navbar() {
                 key={to}
                 to={to}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  location.pathname === to
+                  isActivePath(location.pathname, to)
                     ? 'text-teal-600 bg-brand-mintLight'
                     : 'text-slate-600 hover:text-teal-600 hover:bg-brand-skyLight/50'
                 }`}
@@ -66,7 +72,9 @@ export default function Navbar() {
                   to={to}
                   onClick={() => setMobileOpen(false)}
                   className={`px-4 py-3 rounded-lg text-sm font-medium ${
-                    location.pathname === to ? 'text-teal-600 bg-brand-mintLight' : 'text-slate-600 hover:bg-brand-skyLight/50'
+                    isActivePath(location.pathname, to)
+                      ? 'text-teal-600 bg-brand-mintLight'
+                      : 'text-slate-600 hover:bg-brand-skyLight/50'
                   }`}
                 >
                   {label}

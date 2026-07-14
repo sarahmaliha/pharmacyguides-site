@@ -8,6 +8,8 @@ import IndustryPivot from './pages/IndustryPivot'
 import Mentorship from './pages/Mentorship'
 import Wellness from './pages/Wellness'
 import About from './pages/About'
+import Blog from './pages/Blog'
+import BlogPostAppeTopics from './pages/BlogPostAppeTopics'
 import BlogPostSample from './pages/BlogPostSample'
 
 export default function App() {
@@ -22,8 +24,10 @@ export default function App() {
           <Route path="/industry-pivot" element={<IndustryPivot />} />
           <Route path="/mentorship" element={<Mentorship />} />
           <Route path="/wellness" element={<Wellness />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/top-5-appe-disease-states" element={<BlogPostAppeTopics />} />
           <Route path="/blog/retail-pharmacy-to-msl" element={<BlogPostSample />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </div>
       <Footer />

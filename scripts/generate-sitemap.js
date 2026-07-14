@@ -14,8 +14,12 @@ const BASE_URL = 'https://pharmacyguides.net'
 
 const ROUTES = [
   '/',
+  '/study-guides',
+  '/industry-pivot',
   '/wellness',
   '/mentorship',
+  '/blog',
+  '/blog/top-5-appe-disease-states',
   '/about',
 ]
 

@@ -23,6 +23,7 @@ export default function Footer() {
             <a href="https://www.etsy.com/shop/PharmacyGuides" target="_blank" rel="noopener noreferrer" className="hover:text-teal-400 transition-colors">Shop on Etsy</a>
             <Link to="/industry-pivot" className="hover:text-teal-400 transition-colors">Industry Pivot</Link>
             <Link to="/mentorship" className="hover:text-teal-400 transition-colors">Mentorship</Link>
+            <Link to="/blog" className="hover:text-teal-400 transition-colors">Blog</Link>
             <Link to="/about" className="hover:text-teal-400 transition-colors">About</Link>
           </nav>
         </div>

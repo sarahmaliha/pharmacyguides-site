@@ -237,7 +237,7 @@ export default function StudyGuides() {
                   'High-yield disease-state coverage in one download',
                   'Layouts built for quick review and quizzing',
                   'Trusted by students, including first-time NAPLEX passers',
-                  'Updated 2026 edition',
+                  'Updated 2027 edition',
                 ].map((item) => (
                   <li key={item} className="flex gap-3">
                     <span className="text-teal-500 shrink-0 mt-0.5" aria-hidden>✓</span>

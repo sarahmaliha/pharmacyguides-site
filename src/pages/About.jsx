@@ -23,7 +23,7 @@ export default function About() {
             </div>
             <div>
               <p className="text-teal-600 font-medium text-sm uppercase tracking-wider mb-2">
-                About
+                About · Dr. Sarah | Traveling PharmD
               </p>
               <h1 className="font-display text-3xl sm:text-4xl font-bold text-slate-900">
                 How It All Began
@@ -32,13 +32,34 @@ export default function About() {
           </div>
           <div className="prose prose-slate max-w-none text-slate-600 space-y-6">
             <p>
-              I'm Dr. Sarah, PharmD, RPh, and I built PharmacyGuides because I remember exactly how overwhelming pharmacy school, licensing exams, and clinical training can feel. I've been in those late-night study sessions, high-pressure rotations, and moments of doubt where you wonder if you're on the right path, or if there's something more out there for you.
+              I'm Dr. Sarah, PharmD, RPh, also known as the Traveling PharmD behind @pharmacytoks. I built PharmacyGuides because I remember exactly how overwhelming pharmacy school, licensing exams, and clinical training can feel. I've been in those late-night study sessions, high-pressure rotations, and moments of doubt where you wonder if you're on the right path, or if there's something more out there for you.
             </p>
             <p>
               My journey didn't follow a straight line. I started in clinical pharmacy and later transitioned into a Medical Science Liaison role in industry. That pivot showed me something important: the gap between traditional pharmacy roles and industry isn't a wall. It's a bridge. You just need the right guidance, clear steps, and someone who understands both sides.
             </p>
             <p>
               PharmacyGuides is built on real experience, not just theory. My goal is to make complex topics simpler, more practical, and easier to apply. Whether you're preparing for NAPLEX or MPJE, exploring new career paths, or looking for mentorship from someone who's been through it, I'm here to support your next step forward.
+            </p>
+            <p>
+              Offline and on social, I share the fuller picture of pharmacy life, from study strategies to travel and balance, as Dr. Sarah | Traveling PharmD on{' '}
+              <a
+                href="https://www.tiktok.com/@pharmacytoks"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-teal-600 font-medium hover:text-teal-700"
+              >
+                TikTok
+              </a>{' '}
+              and{' '}
+              <a
+                href="https://www.instagram.com/pharmacytoks"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-teal-600 font-medium hover:text-teal-700"
+              >
+                Instagram
+              </a>
+              .
             </p>
           </div>
           <div className="mt-10 flex flex-wrap gap-4">

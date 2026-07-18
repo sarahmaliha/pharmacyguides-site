@@ -78,6 +78,31 @@ export default function Hero() {
             ))}
           </div>
         </div>
+
+        <div className="mt-8 md:hidden max-w-sm mx-auto space-y-2.5 text-left">
+          <p className="text-center text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">
+            Quick links
+          </p>
+          {[
+            { to: '/study-guides', label: 'Study Guides' },
+            { to: '/mentorship', label: 'Mentorship' },
+            { to: '/wellness', label: 'Wellness Hub' },
+            { to: '/blog', label: 'Blog' },
+            { to: '/industry-pivot', label: 'Industry Pivot' },
+            { to: '/about', label: 'About Dr. Sarah' },
+          ].map(({ to, label }) => (
+            <Link
+              key={to}
+              to={to}
+              className="flex items-center justify-between w-full px-4 py-3.5 rounded-xl border border-brand-skyPastel/80 bg-white/80 text-slate-800 font-medium text-sm hover:border-teal-400 hover:text-teal-700 transition-colors"
+            >
+              {label}
+              <span className="text-teal-600" aria-hidden>
+                →
+              </span>
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   )

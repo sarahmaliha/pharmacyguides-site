@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import MobileLinkHub from './components/MobileLinkHub'
 import Home from './pages/Home'
 import StudyGuides from './pages/StudyGuides'
 import IndustryPivot from './pages/IndustryPivot'
@@ -17,7 +18,7 @@ export default function App() {
     <div className="flex min-h-screen flex-col">
       <ScrollToTop />
       <Navbar />
-      <div className="flex-1">
+      <div className="flex-1 pb-16 md:pb-0">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/study-guides" element={<StudyGuides />} />
@@ -31,6 +32,7 @@ export default function App() {
         </Routes>
       </div>
       <Footer />
+      <MobileLinkHub />
     </div>
   )
 }

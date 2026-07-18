@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import Hero from '../components/Hero'
+import TravelingPharmD from '../components/TravelingPharmD'
 import { TESTIMONIALS } from '../data/etsyReviews'
 
 const REVIEW_HOLD_MS = 4000
@@ -82,6 +83,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <TravelingPharmD />
 
       {/* Start Here */}
       <section className="py-14 sm:py-20">

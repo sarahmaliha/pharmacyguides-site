@@ -1,19 +1,17 @@
 import { Link } from 'react-router-dom'
-import { PillBottle } from './icons/PharmaIcons'
 
 export default function Footer() {
   return (
     <footer className="bg-slate-900 text-slate-300">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <Link to="/" className="flex items-center gap-2 w-fit">
-            <span className="w-9 h-9 rounded-lg bg-teal-800 text-teal-300 flex items-center justify-center shrink-0" aria-hidden="true">
-              <PillBottle className="w-5 h-5" />
-            </span>
+          <Link to="/" className="flex items-center w-fit hover:opacity-100 transition-opacity opacity-90">
             <img
-              src="/logo-dr-sarah.png"
+              src="/logo-circle.png?v=2"
               alt="PharmacyGuides by Dr. Sarah, PharmD RPh"
-              className="h-10 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+              className="h-14 w-14 rounded-full object-cover"
+              width={56}
+              height={56}
             />
           </Link>
           <nav className="flex flex-wrap gap-6">

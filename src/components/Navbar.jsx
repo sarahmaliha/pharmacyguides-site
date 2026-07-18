@@ -21,23 +21,33 @@ export default function Navbar() {
   const location = useLocation()
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-sm bg-brand-mintLight/90 border-b border-brand-skyPastel/50">
-      <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-18">
-          <Link to="/" className="font-display font-semibold text-slate-800 hover:text-teal-600 transition-colors" aria-label="PharmacyGuides, LLC Home">
-            PharmacyGuides, LLC
+    <header className="sticky top-0 z-50 backdrop-blur-sm bg-brand-mintLight/95 border-b border-brand-skyPastel/50">
+      <nav className="max-w-7xl mx-auto px-3 sm:px-5 lg:px-6">
+        <div className="flex items-center gap-3 sm:gap-5 min-h-[5.5rem] sm:min-h-[6.25rem] py-2">
+          <Link
+            to="/"
+            className="flex items-center shrink-0 hover:opacity-90 transition-opacity"
+            aria-label="PharmacyGuides, LLC Home"
+          >
+            <img
+              src="/logo-circle.png?v=2"
+              alt="PharmacyGuides by Dr. Sarah, PharmD RPh"
+              className="h-[4.75rem] w-[4.75rem] sm:h-[5.5rem] sm:w-[5.5rem] rounded-full object-cover"
+              width={88}
+              height={88}
+            />
           </Link>
 
-          {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-1">
+          {/* Desktop nav — fills remaining width */}
+          <div className="hidden md:flex flex-1 items-center justify-between gap-1 min-w-0">
             {navLinks.map(({ to, label }) => (
               <Link
                 key={to}
                 to={to}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                className={`px-2 lg:px-3 py-2.5 rounded-lg text-sm lg:text-[0.95rem] font-medium whitespace-nowrap transition-colors ${
                   isActivePath(location.pathname, to)
-                    ? 'text-teal-600 bg-brand-mintLight'
-                    : 'text-slate-600 hover:text-teal-600 hover:bg-brand-skyLight/50'
+                    ? 'text-teal-700 bg-white/80'
+                    : 'text-slate-700 hover:text-teal-700 hover:bg-white/50'
                 }`}
               >
                 {label}
@@ -45,14 +55,13 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Mobile menu button */}
           <button
             type="button"
-            className="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100"
+            className="md:hidden ml-auto p-2 rounded-lg text-slate-600 hover:bg-white/60"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {mobileOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               ) : (
@@ -62,10 +71,9 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile nav */}
         {mobileOpen && (
-          <div className="md:hidden py-4 border-t border-slate-200">
-            <div className="flex flex-col gap-1">
+          <div className="md:hidden py-3 border-t border-brand-skyPastel/60">
+            <div className="flex flex-col gap-0.5">
               {navLinks.map(({ to, label }) => (
                 <Link
                   key={to}
@@ -73,8 +81,8 @@ export default function Navbar() {
                   onClick={() => setMobileOpen(false)}
                   className={`px-4 py-3 rounded-lg text-sm font-medium ${
                     isActivePath(location.pathname, to)
-                      ? 'text-teal-600 bg-brand-mintLight'
-                      : 'text-slate-600 hover:bg-brand-skyLight/50'
+                      ? 'text-teal-700 bg-white/80'
+                      : 'text-slate-700 hover:bg-white/50'
                   }`}
                 >
                   {label}

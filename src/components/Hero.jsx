@@ -97,22 +97,6 @@ export default function Hero() {
             Instagram
           </a>
         </div>
-
-        <div className="mt-6 max-w-sm mx-auto space-y-2.5 md:hidden">
-          {[
-            { to: '/wellness', label: 'Wellness Hub' },
-            { to: '/blog', label: 'Blog' },
-            { to: '/industry-pivot', label: 'Industry Pivot' },
-            { to: '/about', label: 'About Dr. Sarah' },
-          ].map(({ to, label }) => (
-            <Link key={to} to={to} className={linkButtonClass}>
-              {label}
-              <span className="text-teal-600" aria-hidden>
-                →
-              </span>
-            </Link>
-          ))}
-        </div>
       </div>
     </section>
   )

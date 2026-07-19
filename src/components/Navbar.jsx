@@ -26,16 +26,25 @@ export default function Navbar() {
         <div className="flex items-center gap-3 sm:gap-5 min-h-[5.5rem] sm:min-h-[6.25rem] py-2">
           <Link
             to="/"
-            className="flex items-center shrink-0 hover:opacity-90 transition-opacity"
+            className="flex items-center gap-2.5 sm:gap-3 min-w-0 hover:opacity-90 transition-opacity"
             aria-label="PharmacyGuides, LLC Home"
           >
             <img
               src="/logo-circle.png?v=2"
               alt="PharmacyGuides by Dr. Sarah, PharmD RPh"
-              className="h-[4.75rem] w-[4.75rem] sm:h-[5.5rem] sm:w-[5.5rem] rounded-full object-cover"
+              className="h-[4.75rem] w-[4.75rem] sm:h-[5.5rem] sm:w-[5.5rem] rounded-full object-cover shrink-0"
               width={88}
               height={88}
             />
+            <span className="md:hidden flex flex-col justify-center leading-tight min-w-0">
+              <span className="font-display font-bold text-[1.15rem] tracking-tight">
+                <span className="text-slate-900">Pharmacy</span>
+                <span className="text-teal-600">Guides</span>
+              </span>
+              <span className="mt-0.5 text-[0.7rem] font-medium text-slate-500 tracking-wide">
+                by Dr. Sarah
+              </span>
+            </span>
           </Link>
 
           {/* Desktop nav — fills remaining width */}

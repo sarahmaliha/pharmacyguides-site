@@ -52,18 +52,9 @@ export default function Hero() {
           />
         </div>
 
-        <div className="flex items-center justify-center gap-2.5 mb-4 animate-review-in">
-          <img
-            src="/logo-mark.png"
-            alt=""
-            className="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover ring-2 ring-white shadow-sm"
-            width={36}
-            height={36}
-          />
-          <p className="text-teal-700 font-medium text-sm sm:text-base">
-            Dr. Sarah · Traveling PharmD · @pharmacytoks
-          </p>
-        </div>
+        <p className="text-teal-700 font-medium text-sm sm:text-base mb-4 animate-review-in">
+          Dr. Sarah · Traveling PharmD · @pharmacytoks
+        </p>
 
         <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight tracking-tight animate-review-in [animation-delay:80ms] opacity-0 [animation-fill-mode:forwards]">
           Master pharmacy school, licensure exams, and{' '}

@@ -6,6 +6,7 @@ export default function BlogPostAppeTopics() {
     <BlogPostTemplate
       title="Top 5 Disease States to Know for APPEs"
       description="Focus your APPE prep on the five disease states you will encounter most often: hypertension, diabetes, anticoagulation, infectious diseases, and heart failure."
+      image="/blog-appe-preview.jpg"
       publishedAt="2026-07-14T12:00:00.000Z"
       author={{
         name: 'Dr. Sarah',

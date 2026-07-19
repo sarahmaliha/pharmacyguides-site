@@ -69,11 +69,11 @@ export default function BlogPostTemplate({
         </header>
 
         {image && (
-          <div className="aspect-video rounded-2xl bg-teal-100 mb-10 overflow-hidden">
+          <div className="rounded-2xl bg-teal-100 mb-10 overflow-hidden aspect-[4/5] sm:aspect-video max-h-[28rem]">
             <img
               src={image}
               alt=""
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center"
               onError={(e) => {
                 e.target.onerror = null
                 e.target.style.display = 'none'

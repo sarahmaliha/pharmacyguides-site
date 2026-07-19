@@ -13,5 +13,7 @@ export const blogPosts = [
     publishedAt: '2026-07-14T12:00:00.000Z',
     path: '/blog/top-5-appe-disease-states',
     tag: 'APPEs',
+    image: '/blog-appe-preview.jpg',
+    imageAlt: 'Pharmacist in a white coat administering a vaccine to a patient',
   },
 ]

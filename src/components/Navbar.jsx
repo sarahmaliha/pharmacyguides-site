@@ -3,12 +3,12 @@ import { Link, useLocation } from 'react-router-dom'
 
 const navLinks = [
   { to: '/', label: 'Home' },
+  { to: '/about', label: 'About' },
   { to: '/study-guides', label: 'Study Guides' },
+  { to: '/blog', label: 'Blog' },
   { to: '/industry-pivot', label: 'Industry Pivot' },
   { to: '/mentorship', label: 'Mentorship' },
   { to: '/wellness', label: 'Wellness Hub' },
-  { to: '/blog', label: 'Blog' },
-  { to: '/about', label: 'About' },
 ]
 
 function isActivePath(pathname, to) {

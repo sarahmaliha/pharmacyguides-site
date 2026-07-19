@@ -73,16 +73,20 @@ export default function Blog() {
                 to={post.path}
                 className="group grid grid-cols-1 md:grid-cols-[220px_1fr] gap-0 overflow-hidden rounded-3xl border border-brand-skyPastel/60 bg-gradient-to-br from-white via-brand-mintLight/40 to-brand-skyLight/30 shadow-sm transition-all hover:-translate-y-0.5 hover:border-teal-300 hover:shadow-md"
               >
-                <div className="relative min-h-[180px] md:min-h-full bg-gradient-to-br from-teal-600 to-teal-800 p-6 flex flex-col justify-between text-white overflow-hidden">
-                  <div className="absolute -right-6 -bottom-8 h-28 w-28 rounded-full bg-teal-400/30" aria-hidden />
-                  <div className="absolute right-8 top-8 h-10 w-16 rounded-full bg-teal-300/40 rotate-[-24deg]" aria-hidden />
-                  <p className="relative text-xs font-semibold uppercase tracking-wider text-teal-100">
+                <div className="relative min-h-[200px] md:min-h-full overflow-hidden bg-slate-100">
+                  {post.image ? (
+                    <img
+                      src={post.image}
+                      alt={post.imageAlt || ''}
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 bg-gradient-to-br from-teal-600 to-teal-800" />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/55 via-slate-900/10 to-transparent" aria-hidden />
+                  <p className="absolute left-4 bottom-4 text-xs font-semibold uppercase tracking-wider text-white">
                     {post.tag || 'Pharmacy'}
                   </p>
-                  <div className="relative">
-                    <p className="font-display text-2xl font-bold leading-tight">APPE</p>
-                    <p className="text-teal-100 text-sm mt-1">Disease-state focus</p>
-                  </div>
                 </div>
 
                 <div className="p-6 sm:p-8">

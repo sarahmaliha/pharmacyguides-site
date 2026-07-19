@@ -17,7 +17,7 @@ export default function Blog() {
         <title>Blog | PharmacyGuides LLC</title>
         <meta
           name="description"
-          content="Practical pharmacy advice for APPEs, boards, mentorship, and career pivots from Dr. Sarah at PharmacyGuides."
+          content="Real talk on pharmacy school, APPEs, residency, retail, management, and industry - plus why your path doesn’t have to be linear. From Dr. Sarah at PharmacyGuides."
         />
       </Helmet>
 
@@ -32,25 +32,25 @@ export default function Blog() {
         />
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 lg:gap-10 items-center">
             <div className="animate-review-in">
               <p className="text-teal-600 font-medium text-sm uppercase tracking-wider mb-2">Blog</p>
               <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-                Notes from the pharmacy path
+                The path isn’t always linear
               </h1>
-              <p className="text-slate-600 text-base sm:text-lg max-w-xl">
-                Practical tips for APPEs, boards, and the next chapter after pharmacy school, written by someone who has been there.
+              <p className="text-slate-600 text-base sm:text-lg max-w-xl leading-relaxed">
+                I’ve been through pharmacy school, APPEs, residency, retail, management, and industry, and I’m still rewriting what “the right path” looks like. Here you’ll find honest notes from the journey, reminders that it’s okay if yours isn’t a straight line, and more posts coming soon.
               </p>
             </div>
 
-            <div className="relative mx-auto w-full max-w-md lg:max-w-none animate-review-in [animation-delay:120ms]">
-              <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-teal-100/70 to-brand-skyPastel/40 blur-sm" aria-hidden />
+            <div className="relative mx-auto w-full max-w-[220px] sm:max-w-[260px] lg:max-w-[280px] animate-review-in [animation-delay:120ms]">
+              <div className="absolute -inset-2.5 rounded-[1.5rem] bg-gradient-to-br from-teal-100/70 to-brand-skyPastel/40 blur-sm" aria-hidden />
               <img
-                src="/blog-hero.svg"
-                alt=""
-                className="relative w-full rounded-3xl border border-white/80 shadow-sm"
-                width={480}
-                height={360}
+                src="/blog-hero.jpg"
+                alt="Pharmacist compounding in a sterile cleanroom"
+                className="relative w-full aspect-[3/4] object-cover rounded-2xl border border-white/80 shadow-sm"
+                width={280}
+                height={373}
               />
             </div>
           </div>
@@ -62,7 +62,7 @@ export default function Blog() {
           <div className="flex items-end justify-between gap-4 mb-8">
             <div>
               <h2 className="font-display text-2xl sm:text-3xl font-bold text-slate-900">Latest post</h2>
-              <p className="text-slate-600 mt-1">Start here for a quick win before your next rotation.</p>
+              <p className="text-slate-600 mt-1">More stories from the journey are on the way - start with this one.</p>
             </div>
           </div>
 

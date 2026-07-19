@@ -47,7 +47,7 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* Desktop nav — fills remaining width */}
+          {/* Desktop nav - fills remaining width */}
           <div className="hidden md:flex flex-1 items-center justify-between gap-1 min-w-0">
             {navLinks.map(({ to, label }) => (
               <Link

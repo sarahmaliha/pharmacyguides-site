@@ -69,7 +69,7 @@ export default function FeaturedBundle() {
                 The Ultimate Pharmacy Bundle
               </h2>
               <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 mb-4">
-                The bestselling study resource from the Traveling PharmD behind @pharmacytoks — high-yield disease-state one-pagers built for pharmacy school, rotations, and boards.
+                The bestselling study resource from the Traveling PharmD behind @pharmacytoks - high-yield disease-state one-pagers built for pharmacy school, rotations, and boards.
               </p>
               <p className="text-slate-500 text-sm sm:text-base leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8">
                 Organized, concise, and made to make studying feel lighter so you can show up more confident.

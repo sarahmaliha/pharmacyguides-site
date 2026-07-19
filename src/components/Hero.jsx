@@ -62,7 +62,7 @@ export default function Hero() {
         </h1>
 
         <p className="mt-4 sm:mt-5 text-base sm:text-lg text-slate-600 leading-relaxed animate-review-in [animation-delay:160ms] opacity-0 [animation-fill-mode:forwards]">
-          High-yield pharmacy. Real life beyond the white coat. Study guides and tips from the same Dr. Sarah you know on social — built to make pharmacy school, rotations, and boards feel lighter.
+          High-yield pharmacy. Real life beyond the white coat. Study guides and tips from the same Dr. Sarah you know on social - built to make pharmacy school, rotations, and boards feel lighter.
         </p>
 
         <div className="mt-8 sm:mt-10 max-w-sm mx-auto space-y-3 animate-review-in [animation-delay:240ms] opacity-0 [animation-fill-mode:forwards]">

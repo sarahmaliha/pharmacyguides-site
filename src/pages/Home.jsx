@@ -25,7 +25,7 @@ const START_HERE = [
   },
   {
     title: 'Wellness Hub',
-    description: 'A calm reset for busy pharmacy days — mood checks and 2-minute tools.',
+    description: 'A calm reset for busy pharmacy days - mood checks and 2-minute tools.',
     to: '/wellness',
     cta: 'Take a pause',
   },
@@ -61,7 +61,7 @@ export default function Home() {
                 What do you need today?
               </h2>
               <p className="text-slate-600 text-base sm:text-lg">
-                Guides, tips, career clarity, or a quick reset — come as you are.
+                Guides, tips, career clarity, or a quick reset - come as you are.
               </p>
             </div>
           </Reveal>

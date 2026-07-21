@@ -301,9 +301,9 @@ export default function StudyGuides() {
               That momentum became PharmacyGuides. Today these digital guides are designed to help you ace pharmacy school, rotations, and boards so you can study smarter, retain more, and move forward with confidence.
             </p>
           </div>
-          <blockquote className="mt-8 rounded-2xl border border-teal-100 bg-teal-50/60 px-5 py-4 text-teal-900 italic">
-            “I built these because I needed something clearer, too, and I still believe studying should feel doable, not draining.”
-            <footer className="mt-2 text-sm not-italic font-medium text-teal-700">
+          <blockquote className="mt-8 rounded-2xl border border-accent-100 bg-accent-50/60 px-5 py-4 text-accent-900 italic">
+            “My mission is to help students spend less time feeling overwhelmed and more time feeling confident in what they know.”
+            <footer className="mt-2 text-sm not-italic font-medium text-accent-700">
               - Dr. Sarah, PharmD, RPh
             </footer>
           </blockquote>

@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async'
 import Hero from '../components/Hero'
 import FeaturedBundle from '../components/FeaturedBundle'
 import Reveal from '../components/Reveal'
+import GeneralQuestionsForm from '../components/GeneralQuestionsForm'
 
 const START_HERE = [
   {
@@ -88,6 +89,28 @@ export default function Home() {
                 </Link>
               ))}
             </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* General Questions */}
+      <section className="relative overflow-hidden py-16 sm:py-24 bg-white">
+        <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <div className="text-center mb-8 sm:mb-10">
+              <p className="text-teal-600 font-medium text-sm uppercase tracking-wider mb-2">
+                Get in touch
+              </p>
+              <h2 className="font-display text-2xl sm:text-3xl font-bold text-slate-900 mb-3">
+                Have a question?
+              </h2>
+              <p className="text-slate-600 text-base sm:text-lg">
+                Send a message and I’ll respond at my earliest convenience.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal delayMs={80}>
+            <GeneralQuestionsForm idPrefix="home-question" />
           </Reveal>
         </div>
       </section>

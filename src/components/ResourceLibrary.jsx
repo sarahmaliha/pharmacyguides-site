@@ -50,6 +50,19 @@ export default function ResourceLibrary() {
   const [search, setSearch] = useState('')
   const [category, setCategory] = useState('All')
   const [outreachModalOpen, setOutreachModalOpen] = useState(false)
+  const [preparingPdf, setPreparingPdf] = useState(false)
+
+  async function handleDownloadGlossary() {
+    if (preparingPdf) return
+    setPreparingPdf(true)
+    try {
+      await downloadGlossaryPdf()
+    } catch (err) {
+      console.error('Failed to generate glossary PDF', err)
+    } finally {
+      setPreparingPdf(false)
+    }
+  }
   const isOnIndustryPivotPage = pathname === '/industry-pivot'
   const isOnStudyGuidesPage = pathname === '/study-guides'
 
@@ -238,10 +251,11 @@ export default function ResourceLibrary() {
               ) : resource.id === 4 ? (
                 <button
                   type="button"
-                  onClick={downloadGlossaryPdf}
-                  className="block w-full py-2.5 rounded-xl border-2 border-teal-500 text-teal-600 font-semibold text-sm hover:bg-teal-50 transition-colors text-center"
+                  onClick={handleDownloadGlossary}
+                  disabled={preparingPdf}
+                  className="block w-full py-2.5 rounded-xl border-2 border-teal-500 text-teal-600 font-semibold text-sm hover:bg-teal-50 transition-colors text-center disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Download Now
+                  {preparingPdf ? 'Preparing…' : 'Download Now'}
                 </button>
               ) : resource.id === 5 ? (
                 <button

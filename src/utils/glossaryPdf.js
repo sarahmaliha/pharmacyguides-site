@@ -1,4 +1,3 @@
-import { jsPDF } from 'jspdf'
 import { INDUSTRY_GLOSSARY, GLOSSARY_TITLE, GLOSSARY_SUBTITLE } from '../data/industryGlossary'
 
 const MARGIN = 20
@@ -16,7 +15,11 @@ const GAP_BETWEEN_ENTRIES = 6
 /**
  * Generates the Industry Acronym Glossary PDF and triggers download.
  */
-export function downloadGlossaryPdf() {
+export async function downloadGlossaryPdf() {
+  // Load the (heavy) PDF library only when the user actually downloads,
+  // so it isn't part of the initial page bundle.
+  const { jsPDF } = await import('jspdf')
+
   const doc = new jsPDF({ unit: 'mm', format: 'a4' })
   let y = MARGIN
 

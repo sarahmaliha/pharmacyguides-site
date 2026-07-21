@@ -5,22 +5,43 @@ const CALENDLY_SCRIPT_URL = 'https://assets.calendly.com/assets/external/widget.
 const CALENDLY_URL = 'https://calendly.com/pharmacyguidesllc/30min'
 const GENERAL_QUESTIONS_EMAIL = 'pharmacyguidesllc@gmail.com'
 
+const GENERAL_QUESTIONS_ENDPOINT = `https://formsubmit.co/ajax/${GENERAL_QUESTIONS_EMAIL}`
+
 export default function Mentorship() {
   const initialized = useRef(false)
   const [generalQuestion, setGeneralQuestion] = useState({ name: '', email: '', message: '' })
-  const [generalQuestionSubmitted, setGeneralQuestionSubmitted] = useState(false)
+  const [status, setStatus] = useState('idle') // 'idle' | 'submitting' | 'success' | 'error'
 
-  function handleGeneralQuestionSubmit(e) {
+  async function handleGeneralQuestionSubmit(e) {
     e.preventDefault()
     const { name, email, message } = generalQuestion
     if (!name.trim() || !email.trim() || !message.trim()) return
-    const subject = encodeURIComponent(`General question from PharmacyGuides: ${name}`)
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-    )
-    window.location.href = `mailto:${GENERAL_QUESTIONS_EMAIL}?subject=${subject}&body=${body}`
-    setGeneralQuestionSubmitted(true)
-    setGeneralQuestion({ name: '', email: '', message: '' })
+
+    setStatus('submitting')
+    try {
+      const response = await fetch(GENERAL_QUESTIONS_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          _subject: `General question from PharmacyGuides: ${name}`,
+          _template: 'table',
+          _replyto: email,
+        }),
+      })
+
+      if (!response.ok) throw new Error('Request failed')
+
+      setStatus('success')
+      setGeneralQuestion({ name: '', email: '', message: '' })
+    } catch (err) {
+      setStatus('error')
+    }
   }
 
   useEffect(() => {
@@ -174,16 +195,22 @@ export default function Mentorship() {
                   className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent resize-y min-h-[100px]"
                 />
               </div>
-              {generalQuestionSubmitted && (
+              {status === 'success' && (
                 <p className="text-sm text-teal-600 font-medium">
-                  Your email client will open with your message. Send the email to submit your question.
+                  Thank you! Your question has been sent. I’ll respond at my earliest convenience.
+                </p>
+              )}
+              {status === 'error' && (
+                <p className="text-sm text-red-600 font-medium">
+                  Something went wrong sending your question. Please try again in a moment.
                 </p>
               )}
               <button
                 type="submit"
-                className="w-full py-3 rounded-xl bg-teal-600 text-white font-semibold text-sm hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-colors"
+                disabled={status === 'submitting'}
+                className="w-full py-3 rounded-xl bg-teal-600 text-white font-semibold text-sm hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Submit question
+                {status === 'submitting' ? 'Sending...' : 'Submit question'}
               </button>
             </form>
           </div>

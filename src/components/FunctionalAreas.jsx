@@ -1,3 +1,5 @@
+import Reveal from './Reveal'
+
 const areas = [
   {
     id: 'medical-affairs',
@@ -95,21 +97,20 @@ export default function FunctionalAreas() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {areas.map((area) => (
-            <div
-              key={area.id}
-              className="relative flex flex-col bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md hover:border-teal-100 transition-all"
-            >
-              <div className="w-14 h-14 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center mb-4 border border-teal-100 flex-shrink-0">
-                {area.icon}
+          {areas.map((area, i) => (
+            <Reveal key={area.id} delayMs={(i % 4) * 70}>
+              <div className="relative flex flex-col h-full bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-lg hover:border-teal-200 hover:-translate-y-1 transition-all">
+                <div className="w-14 h-14 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center mb-4 border border-teal-100 flex-shrink-0">
+                  {area.icon}
+                </div>
+                <h3 className="font-display font-semibold text-slate-900 text-lg mb-2">
+                  {area.title}
+                </h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  {area.description}
+                </p>
               </div>
-              <h3 className="font-display font-semibold text-slate-900 text-lg mb-2">
-                {area.title}
-              </h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                {area.description}
-              </p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

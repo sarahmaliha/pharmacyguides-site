@@ -7,7 +7,7 @@ const linkButtonClass =
   'flex w-full items-center justify-center gap-2 px-5 py-3.5 rounded-xl border border-brand-skyPastel/90 bg-white/90 text-slate-800 font-semibold text-sm sm:text-base shadow-sm hover:border-teal-400 hover:text-teal-800 hover:bg-white transition-colors'
 
 const primaryButtonClass =
-  'flex w-full items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-teal-600 text-white font-semibold text-sm sm:text-base shadow-lg shadow-teal-600/20 hover:bg-teal-700 transition-colors'
+  'btn-shimmer flex w-full items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-teal-600 text-white font-semibold text-sm sm:text-base shadow-lg shadow-teal-600/20 hover:bg-teal-700 transition-colors'
 
 function TikTokIcon({ className = 'w-5 h-5' }) {
   return (
@@ -33,7 +33,11 @@ export default function Hero() {
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute bottom-10 right-0 h-64 w-64 rounded-full bg-teal-200/20 blur-3xl"
+        className="pointer-events-none absolute -top-10 right-1/4 h-72 w-72 rounded-full bg-brand-peach/50 blur-3xl"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute bottom-10 right-0 h-64 w-64 rounded-full bg-accent-200/30 blur-3xl"
         aria-hidden
       />
 
@@ -58,7 +62,7 @@ export default function Hero() {
 
         <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight tracking-tight animate-review-in [animation-delay:80ms] opacity-0 [animation-fill-mode:forwards]">
           Master pharmacy school, licensure exams, and{' '}
-          <span className="text-teal-600">beyond.</span>
+          <span className="text-accent-600">beyond.</span>
         </h1>
 
         <p className="mt-4 sm:mt-5 text-base sm:text-lg text-slate-600 leading-relaxed animate-review-in [animation-delay:160ms] opacity-0 [animation-fill-mode:forwards]">

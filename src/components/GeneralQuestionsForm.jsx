@@ -99,7 +99,7 @@ export default function GeneralQuestionsForm({ idPrefix = 'question' }) {
       <button
         type="submit"
         disabled={status === 'submitting'}
-        className="w-full py-3 rounded-xl bg-teal-600 text-white font-semibold text-sm hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+        className="btn-shimmer w-full py-3 rounded-xl bg-teal-600 text-white font-semibold text-sm hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {status === 'submitting' ? 'Sending...' : 'Submit question'}
       </button>

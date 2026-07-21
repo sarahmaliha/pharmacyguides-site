@@ -37,7 +37,7 @@ export default function IndustryPivot() {
         style={{ backgroundImage: "url('/how-i-help-banner.png')" }}
       >
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-teal-600 font-medium text-sm uppercase tracking-wider mb-2">
+          <p className="eyebrow mb-2">
             Industry Transition Roadmap
           </p>
           <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
@@ -49,7 +49,7 @@ export default function IndustryPivot() {
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
               to="/mentorship"
-              className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-teal-600 text-white font-semibold shadow-lg shadow-teal-600/25 hover:bg-teal-700 transition-colors"
+              className="btn-shimmer inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-teal-600 text-white font-semibold shadow-lg shadow-teal-600/25 hover:bg-teal-700 transition-colors"
             >
               Book a Mentorship Session
             </Link>

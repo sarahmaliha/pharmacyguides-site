@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import { blogPosts } from '../data/blogPosts'
+import Reveal from '../components/Reveal'
 
 function formatDate(iso) {
   return new Date(iso).toLocaleDateString('en-US', {
@@ -30,11 +31,15 @@ export default function Blog() {
           className="pointer-events-none absolute bottom-0 left-0 h-40 w-40 rounded-full bg-teal-200/30 blur-2xl"
           aria-hidden
         />
+        <div
+          className="pointer-events-none absolute top-1/3 left-1/2 h-44 w-44 rounded-full bg-brand-blush/40 blur-3xl"
+          aria-hidden
+        />
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 lg:gap-10 items-center">
             <div className="animate-review-in">
-              <p className="text-teal-600 font-medium text-sm uppercase tracking-wider mb-2">Blog</p>
+              <p className="eyebrow mb-2">Blog</p>
               <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
                 The path isn’t always linear
               </h1>
@@ -67,11 +72,11 @@ export default function Blog() {
           </div>
 
           <div className="space-y-6">
-            {blogPosts.map((post) => (
+            {blogPosts.map((post, i) => (
+              <Reveal key={post.slug} delayMs={i * 80}>
               <Link
-                key={post.slug}
                 to={post.path}
-                className="group grid grid-cols-1 md:grid-cols-[220px_1fr] gap-0 overflow-hidden rounded-3xl border border-brand-skyPastel/60 bg-gradient-to-br from-white via-brand-mintLight/40 to-brand-skyLight/30 shadow-sm transition-all hover:-translate-y-0.5 hover:border-teal-300 hover:shadow-md"
+                className="group grid grid-cols-1 md:grid-cols-[220px_1fr] gap-0 overflow-hidden rounded-3xl border border-brand-skyPastel/60 bg-gradient-to-br from-white via-brand-mintLight/40 to-brand-skyLight/30 shadow-sm transition-all hover:-translate-y-1 hover:border-teal-300 hover:shadow-lg"
               >
                 <div className="relative min-h-[200px] md:min-h-full overflow-hidden bg-slate-100">
                   {post.image ? (
@@ -101,12 +106,13 @@ export default function Blog() {
                   </p>
                   <span className="inline-flex items-center text-teal-600 font-semibold group-hover:text-teal-700">
                     Read the full post
-                    <span className="ml-1 transition-transform group-hover:translate-x-0.5" aria-hidden>
+                    <span className="ml-1 transition-transform group-hover:translate-x-1" aria-hidden>
                       →
                     </span>
                   </span>
                 </div>
               </Link>
+              </Reveal>
             ))}
           </div>
         </div>

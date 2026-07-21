@@ -166,7 +166,7 @@ export default function ResourceLibrary() {
           {filtered.map((resource) => (
             <article
               key={resource.id}
-              className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md hover:border-teal-100 transition-all"
+              className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-lg hover:border-teal-200 hover:-translate-y-1 transition-all"
             >
               <span className="inline-block px-2.5 py-1 rounded-lg bg-teal-50 text-teal-700 text-xs font-medium mb-3">
                 {resource.category}

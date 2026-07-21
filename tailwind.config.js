@@ -31,13 +31,28 @@ export default {
           800: '#3d4732',
           900: '#343c2b',
         },
-        // Mint → teal gradient (original teal palette)
+        // Signature berry/rose accent — warm pop against the teal base
+        accent: {
+          50: '#fdf2f7',
+          100: '#fce7ef',
+          200: '#f9cfe0',
+          300: '#f2a8c6',
+          400: '#e87aa6',
+          500: '#d9548a',
+          600: '#c23d72',
+          700: '#a52e5d',
+          800: '#87264c',
+          900: '#712341',
+        },
+        // Mint → teal gradient (original teal palette) + warm tints
         brand: {
           mint: '#c8f0e0',
           mintLight: '#e0f7f2',
           skyLight: '#ccfbf1',
           skyPastel: '#99f6e4',
           skySoft: '#5eead4',
+          blush: '#ffe4ec',
+          peach: '#ffe7d9',
         },
       },
       fontFamily: {

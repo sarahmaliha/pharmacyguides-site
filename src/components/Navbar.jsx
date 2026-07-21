@@ -53,10 +53,10 @@ export default function Navbar() {
               <Link
                 key={to}
                 to={to}
-                className={`px-2 lg:px-3 py-2.5 rounded-lg text-sm lg:text-[0.95rem] font-medium whitespace-nowrap transition-colors ${
+                className={`px-3 lg:px-4 py-2 rounded-full text-sm lg:text-[0.95rem] font-medium whitespace-nowrap transition-colors ${
                   isActivePath(location.pathname, to)
-                    ? 'text-teal-700 bg-white/80'
-                    : 'text-slate-700 hover:text-teal-700 hover:bg-white/50'
+                    ? 'text-accent-700 bg-accent-50 ring-1 ring-inset ring-accent-100'
+                    : 'text-slate-700 hover:text-accent-700 hover:bg-accent-50/60'
                 }`}
               >
                 {label}
@@ -88,10 +88,10 @@ export default function Navbar() {
                   key={to}
                   to={to}
                   onClick={() => setMobileOpen(false)}
-                  className={`px-4 py-3 rounded-lg text-sm font-medium ${
-                    isActivePath(location.pathname, to)
-                      ? 'text-teal-700 bg-white/80'
-                      : 'text-slate-700 hover:bg-white/50'
+                  className={`px-4 py-2.5 rounded-full text-sm font-medium ${
+                      isActivePath(location.pathname, to)
+                      ? 'text-accent-700 bg-accent-50 ring-1 ring-inset ring-accent-100'
+                      : 'text-slate-700 hover:text-accent-700 hover:bg-accent-50/60'
                   }`}
                 >
                   {label}

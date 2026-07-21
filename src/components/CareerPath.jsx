@@ -1,3 +1,5 @@
+import Reveal from './Reveal'
+
 const steps = [
   {
     id: 1,
@@ -57,7 +59,7 @@ export default function CareerPath() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-slate-900">
-            Your Path to Becoming an MSL
+            Your Path to Becoming an <span className="text-accent-600">MSL</span>
           </h2>
           <p className="mt-4 text-slate-600">
             A clear, step-by-step roadmap from clinical pharmacy to Medical Science Liaison, built from lived experience.
@@ -66,21 +68,23 @@ export default function CareerPath() {
 
         {/* Horizontal timeline on large screens, stacked on small */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
-          {steps.map((step) => (
-            <div key={step.id} className="relative flex flex-col items-center text-center group bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md hover:border-teal-100 transition-all">
-              <div className="w-16 h-16 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center mb-4 border-2 border-teal-100 group-hover:border-teal-300 group-hover:bg-teal-100 transition-colors flex-shrink-0">
-                {step.icon}
+          {steps.map((step, i) => (
+            <Reveal key={step.id} delayMs={(i % 5) * 70}>
+              <div className="relative flex flex-col items-center text-center group h-full bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-lg hover:border-teal-200 hover:-translate-y-1 transition-all">
+                <div className="w-16 h-16 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center mb-4 border-2 border-teal-100 group-hover:border-teal-300 group-hover:bg-teal-100 transition-colors flex-shrink-0">
+                  {step.icon}
+                </div>
+                <p className="eyebrow mb-2">
+                  Step {step.id}
+                </p>
+                <h3 className="font-display font-semibold text-slate-900 text-lg mb-2">
+                  {step.title}
+                </h3>
+                <p className="text-sm text-slate-600 max-w-[260px] mx-auto">
+                  {step.description}
+                </p>
               </div>
-              <p className="text-xs font-semibold text-teal-600 uppercase tracking-wider mb-1">
-                Step {step.id}
-              </p>
-              <h3 className="font-display font-semibold text-slate-900 text-lg mb-2">
-                {step.title}
-              </h3>
-              <p className="text-sm text-slate-600 max-w-[260px] mx-auto">
-                {step.description}
-              </p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

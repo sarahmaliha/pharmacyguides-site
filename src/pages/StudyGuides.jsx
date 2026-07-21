@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState } from 'react'
 import ResourceLibrary from '../components/ResourceLibrary'
+import Reveal from '../components/Reveal'
 import { useLocation } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { ETSY_SHOP_URL, RELAYED_SHOP_URL } from '../data/etsyStudyGuides'
@@ -38,7 +39,7 @@ function ShopButtons({ className = '' }) {
         href={RELAYED_SHOP_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-teal-600 text-white font-semibold text-sm hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-colors"
+        className="btn-shimmer inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-teal-600 text-white font-semibold text-sm hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-colors"
       >
         Shop on RelayED
         <ExternalIcon />
@@ -47,7 +48,7 @@ function ShopButtons({ className = '' }) {
         href={ETSY_SHOP_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border-2 border-teal-500 text-teal-700 font-semibold text-sm hover:bg-teal-50 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-colors"
+        className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border-2 border-teal-500 text-teal-700 font-semibold text-sm hover:bg-teal-50 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-all hover:-translate-y-0.5"
       >
         Shop on Etsy
         <ExternalIcon />
@@ -180,8 +181,16 @@ export default function StudyGuides() {
 
       {/* 1. Hero */}
       <section className="relative py-12 sm:py-16 overflow-hidden bg-gradient-to-b from-brand-mintLight via-brand-skyLight/40 to-white">
+        <div
+          className="pointer-events-none absolute -top-12 right-[8%] h-52 w-52 rounded-full bg-brand-blush/50 blur-3xl"
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute bottom-0 left-[4%] h-44 w-44 rounded-full bg-brand-peach/40 blur-3xl"
+          aria-hidden
+        />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-teal-600 font-medium text-sm uppercase tracking-wider mb-2">
+          <p className="eyebrow mb-2">
             Digital Guides
           </p>
           <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 max-w-3xl">
@@ -193,10 +202,10 @@ export default function StudyGuides() {
           <ShopButtons />
           <button
             type="button"
-            onClick={() => setSampleOpen(true)}
-            className="mt-4 inline-flex items-center text-teal-600 font-semibold text-sm hover:text-teal-700"
-          >
-            Preview a free sample one-pager (Diabetes) →
+                onClick={() => setSampleOpen(true)}
+                className="link-underline mt-4 inline-flex items-center text-teal-600 font-semibold text-sm hover:text-teal-700"
+              >
+                Preview a free sample one-pager (Diabetes) →
           </button>
         </div>
       </section>
@@ -217,13 +226,13 @@ export default function StudyGuides() {
                 width={800}
                 height={1000}
               />
-              <p className="mt-3 text-center text-xs font-semibold uppercase tracking-wider text-teal-600">
-                Bestseller · 2027 Edition
+              <p className="relative z-10 mt-3 text-center">
+                <span className="badge-berry">Bestseller · 2027 Edition</span>
               </p>
             </div>
 
             <div>
-              <p className="text-teal-600 font-medium text-sm uppercase tracking-wider mb-2">
+              <p className="eyebrow mb-2">
                 Featured
               </p>
               <h2 className="font-display text-2xl sm:text-3xl font-bold text-slate-900 mb-4">
@@ -261,16 +270,15 @@ export default function StudyGuides() {
             From infectious disease to cardiology, psychiatry, endocrine, and more, organized the way pharmacists actually need to learn it.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-            {WHATS_INSIDE.map((card) => (
-              <div
-                key={card.title}
-                className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm"
-              >
-                <h3 className="font-display font-semibold text-slate-900 text-lg mb-2">
-                  {card.title}
-                </h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{card.description}</p>
-              </div>
+            {WHATS_INSIDE.map((card, i) => (
+              <Reveal key={card.title} delayMs={(i % 3) * 90}>
+                <div className="hover-lift h-full rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm">
+                  <h3 className="font-display font-semibold text-slate-900 text-lg mb-2">
+                    {card.title}
+                  </h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{card.description}</p>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -309,7 +317,7 @@ export default function StudyGuides() {
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm">
+            <div className="hover-lift rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm">
               <h2 className="font-display text-xl sm:text-2xl font-bold text-slate-900 mb-3">
                 See a Sample
               </h2>
@@ -319,13 +327,13 @@ export default function StudyGuides() {
               <button
                 type="button"
                 onClick={() => setSampleOpen(true)}
-                className="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-teal-600 text-white font-semibold text-sm hover:bg-teal-700 transition-colors"
+                className="btn-shimmer inline-flex items-center justify-center px-5 py-3 rounded-xl bg-teal-600 text-white font-semibold text-sm hover:bg-teal-700 transition-colors"
               >
                 View sample one-pager
               </button>
             </div>
 
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm flex flex-col">
+            <div className="hover-lift rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm flex flex-col">
               <h2 className="font-display text-xl sm:text-2xl font-bold text-slate-900 mb-3">
                 What Students Are Saying
               </h2>
@@ -368,7 +376,7 @@ export default function StudyGuides() {
             Browse disease-state bundles, MPJE resources, and select one-pagers in either shop.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm flex flex-col">
+            <div className="hover-lift rounded-2xl border border-slate-200 bg-white p-6 shadow-sm flex flex-col">
               <h3 className="font-display font-semibold text-slate-900 text-lg mb-2">
                 Disease-State Bundles
               </h3>
@@ -376,10 +384,10 @@ export default function StudyGuides() {
                 Focused sets for cardio, pulmonary, ID, psych, endocrine, and more, available on RelayED and Etsy.
               </p>
               <div className="flex flex-wrap gap-3 text-sm font-semibold">
-                <a href={RELAYED_SHOP_URL} target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700">
+                <a href={RELAYED_SHOP_URL} target="_blank" rel="noopener noreferrer" className="link-underline text-teal-600 hover:text-teal-700">
                   RelayED →
                 </a>
-                <a href={ETSY_SHOP_URL} target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700">
+                <a href={ETSY_SHOP_URL} target="_blank" rel="noopener noreferrer" className="link-underline text-teal-600 hover:text-teal-700">
                   Etsy →
                 </a>
               </div>
@@ -387,7 +395,7 @@ export default function StudyGuides() {
 
             <div
               id="pharmacy-law-mpje-resources"
-              className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm flex flex-col scroll-mt-24"
+              className="hover-lift rounded-2xl border border-slate-200 bg-white p-6 shadow-sm flex flex-col scroll-mt-24"
             >
               <h3 className="font-display font-semibold text-slate-900 text-lg mb-2">
                 MPJE Resources
@@ -396,16 +404,16 @@ export default function StudyGuides() {
                 Virginia MPJE, DC MPJE, and the DC + Virginia bundle, plus federal law one-pagers in the shops.
               </p>
               <div className="flex flex-wrap gap-3 text-sm font-semibold">
-                <a href={RELAYED_SHOP_URL} target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700">
+                <a href={RELAYED_SHOP_URL} target="_blank" rel="noopener noreferrer" className="link-underline text-teal-600 hover:text-teal-700">
                   RelayED →
                 </a>
-                <a href={ETSY_SHOP_URL} target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700">
+                <a href={ETSY_SHOP_URL} target="_blank" rel="noopener noreferrer" className="link-underline text-teal-600 hover:text-teal-700">
                   Etsy →
                 </a>
               </div>
             </div>
 
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm flex flex-col">
+            <div className="hover-lift rounded-2xl border border-slate-200 bg-white p-6 shadow-sm flex flex-col">
               <h3 className="font-display font-semibold text-slate-900 text-lg mb-2">
                 Select One-Pagers
               </h3>
@@ -413,10 +421,10 @@ export default function StudyGuides() {
                 Select clinical one-pagers on RelayED; the full one-pager library is easiest to browse on Etsy.
               </p>
               <div className="flex flex-wrap gap-3 text-sm font-semibold">
-                <a href={RELAYED_SHOP_URL} target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700">
+                <a href={RELAYED_SHOP_URL} target="_blank" rel="noopener noreferrer" className="link-underline text-teal-600 hover:text-teal-700">
                   RelayED →
                 </a>
-                <a href={ETSY_SHOP_URL} target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700">
+                <a href={ETSY_SHOP_URL} target="_blank" rel="noopener noreferrer" className="link-underline text-teal-600 hover:text-teal-700">
                   Etsy →
                 </a>
               </div>

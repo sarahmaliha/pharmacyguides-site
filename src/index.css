@@ -25,3 +25,87 @@ body {
   @apply antialiased text-slate-800;
   background-color: rgb(224 247 242 / 0.55);
 }
+
+/* ---------- Motion & micro-interactions ---------- */
+
+/* Card hover-lift */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -18px rgba(15, 118, 110, 0.35);
+}
+
+/* Animated link underline (grows from left on hover) */
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1.5px;
+  transition: background-size 0.3s ease;
+}
+.link-underline:hover,
+.link-underline:focus-visible {
+  background-size: 100% 1.5px;
+}
+
+/* Subtle sheen that sweeps across a button on hover */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: left 0.7s ease;
+  pointer-events: none;
+}
+.btn-shimmer:hover::after {
+  left: 140%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hover-lift,
+  .link-underline,
+  .btn-shimmer::after {
+    transition: none !important;
+  }
+  .hover-lift:hover {
+    transform: none !important;
+  }
+  .btn-shimmer:hover::after {
+    left: -80%;
+  }
+}
+
+/* ---------- Berry eyebrow ---------- */
+
+/* Signature berry "kicker" label: a bold, consistent pill used above headings
+   and on small labels so the accent color reads as intentional, not scattered. */
+@layer components {
+  .eyebrow {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-accent-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent-700;
+  }
+  .eyebrow::before {
+    content: '';
+    @apply h-1.5 w-1.5 rounded-full bg-accent-500;
+  }
+
+  /* Solid berry badge — a bolder, filled variant for standout labels
+     like "Bestseller" so it pops above the softer section eyebrows. */
+  .badge-berry {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-accent-600 to-accent-700 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-md shadow-accent-700/40;
+  }
+}

@@ -15,14 +15,14 @@ export default function Footer() {
             />
           </Link>
           <nav className="flex flex-wrap gap-6">
-            <Link to="/" className="hover:text-teal-400 transition-colors">Home</Link>
-            <Link to="/study-guides" className="hover:text-teal-400 transition-colors">Study Guides</Link>
-            <a href="https://www.myrelayed.com/pharmacyguides" target="_blank" rel="noopener noreferrer" className="hover:text-teal-400 transition-colors">Shop on RelayED</a>
-            <a href="https://www.etsy.com/shop/PharmacyGuides" target="_blank" rel="noopener noreferrer" className="hover:text-teal-400 transition-colors">Shop on Etsy</a>
-            <Link to="/industry-pivot" className="hover:text-teal-400 transition-colors">Industry Pivot</Link>
-            <Link to="/mentorship" className="hover:text-teal-400 transition-colors">Mentorship</Link>
-            <Link to="/blog" className="hover:text-teal-400 transition-colors">Blog</Link>
-            <Link to="/about" className="hover:text-teal-400 transition-colors">About</Link>
+            <Link to="/" className="link-underline hover:text-teal-400 transition-colors">Home</Link>
+            <Link to="/study-guides" className="link-underline hover:text-teal-400 transition-colors">Study Guides</Link>
+            <a href="https://www.myrelayed.com/pharmacyguides" target="_blank" rel="noopener noreferrer" className="link-underline hover:text-teal-400 transition-colors">Shop on RelayED</a>
+            <a href="https://www.etsy.com/shop/PharmacyGuides" target="_blank" rel="noopener noreferrer" className="link-underline hover:text-teal-400 transition-colors">Shop on Etsy</a>
+            <Link to="/industry-pivot" className="link-underline hover:text-teal-400 transition-colors">Industry Pivot</Link>
+            <Link to="/mentorship" className="link-underline hover:text-teal-400 transition-colors">Mentorship</Link>
+            <Link to="/blog" className="link-underline hover:text-teal-400 transition-colors">Blog</Link>
+            <Link to="/about" className="link-underline hover:text-teal-400 transition-colors">About</Link>
           </nav>
         </div>
         <div className="mt-8 pt-8 border-t border-slate-700 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">

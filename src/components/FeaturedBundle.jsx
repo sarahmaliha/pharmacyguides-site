@@ -37,7 +37,7 @@ export default function FeaturedBundle() {
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute -bottom-28 left-0 h-64 w-64 rounded-full bg-teal-200/25 blur-3xl"
+        className="pointer-events-none absolute -bottom-28 left-0 h-64 w-64 rounded-full bg-brand-blush/50 blur-3xl"
         aria-hidden
       />
 
@@ -56,13 +56,13 @@ export default function FeaturedBundle() {
                 width={280}
                 height={360}
               />
-              <p className="relative mt-4 text-center text-xs font-semibold uppercase tracking-wider text-teal-600">
-                Bestseller · 2027 Edition
+              <p className="relative mt-4 text-center">
+                <span className="badge-berry">Bestseller · 2027 Edition</span>
               </p>
             </div>
 
             <div className="text-center lg:text-left">
-              <p className="text-teal-600 font-medium text-sm uppercase tracking-wider mb-3">
+              <p className="eyebrow mb-3">
                 Created by Dr. Sarah
               </p>
               <h2 className="font-display text-3xl sm:text-4xl font-bold text-slate-900 mb-4 leading-tight">
@@ -76,7 +76,7 @@ export default function FeaturedBundle() {
               </p>
               <Link
                 to="/study-guides#ultimate-bundle"
-                className="inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-teal-600 text-white font-semibold text-sm sm:text-base shadow-lg shadow-teal-600/25 hover:bg-teal-700 transition-colors"
+                className="btn-shimmer inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-teal-600 text-white font-semibold text-sm sm:text-base shadow-lg shadow-teal-600/25 hover:bg-teal-700 transition-colors"
               >
                 See the Ultimate Bundle
               </Link>

@@ -58,7 +58,7 @@ export default function Mentorship() {
       </Helmet>
       <section className="relative max-w-[900px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center mb-10 sm:mb-12">
-          <p className="text-teal-600 font-medium text-sm uppercase tracking-wider mb-2">
+          <p className="eyebrow mb-2">
             Personalized Mentorship
           </p>
           <h1 className="font-display text-3xl sm:text-4xl font-bold text-slate-900 mb-4">

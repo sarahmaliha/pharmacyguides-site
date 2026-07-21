@@ -10,9 +10,17 @@ export default function Wellness() {
         <title>Pharmacy Wellness Hub: Mental Health Support for Pharmacy Students</title>
         <meta name="description" content="Interactive wellness tools and reset exercises designed for pharmacy students and healthcare trainees." />
       </Helmet>
-      <section className="py-12 sm:py-16 bg-gradient-to-b from-brand-mintLight to-white">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-teal-600 font-medium text-sm uppercase tracking-wider mb-2">
+      <section className="relative overflow-hidden py-12 sm:py-16 bg-gradient-to-b from-brand-mintLight to-white">
+        <div
+          className="pointer-events-none absolute -top-10 right-[8%] h-48 w-48 rounded-full bg-brand-blush/50 blur-3xl"
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute bottom-0 left-[6%] h-40 w-40 rounded-full bg-brand-peach/40 blur-3xl"
+          aria-hidden
+        />
+        <div className="relative max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="eyebrow mb-2">
             Wellness Hub
           </p>
           <h1 className="font-display text-3xl sm:text-4xl font-bold text-slate-900 mb-4">

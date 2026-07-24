@@ -5,6 +5,12 @@
 export const ETSY_SHOP_URL = 'https://www.etsy.com/shop/PharmacyGuides'
 export const RELAYED_SHOP_URL = 'https://www.myrelayed.com/pharmacyguides'
 
+/** Direct product listings for the featured Ultimate Pharmacy Bundle */
+export const ULTIMATE_BUNDLE_ETSY_URL =
+  'https://www.etsy.com/listing/1236823288/ultimate-pharmacy-bundle-2026-naplex'
+export const ULTIMATE_BUNDLE_RELAYED_URL =
+  'https://myrelayed.com/p/ultimate-pharmacy-bundle-2026-2d04a'
+
 function listing(id, slug) {
   return `https://www.etsy.com/listing/${id}/${slug}`
 }
@@ -15,7 +21,7 @@ export const STUDY_GUIDE_CATEGORIES = [
     name: 'Pharmacy Disease-State Bundles',
     description: 'Includes the bestselling Ultimate Pharmacy Bundle',
     items: [
-      { title: 'Ultimate Pharmacy Bundle', url: listing(1236823288, '2026-naplex-pharmacy-study-guide-bundle') },
+      { title: 'Ultimate Pharmacy Bundle', url: ULTIMATE_BUNDLE_ETSY_URL },
       { title: 'Pulmonary Disorders Bundle', url: listing(1231958190, 'pulmonary-disorders-pharmacy-study-guide') },
       { title: 'Gastrointestinal Bundle', url: listing(1219523145, 'gastroenterology-study-guide-bundle-for-naplex') },
       { title: 'Kidney & Liver Bundle', url: listing(978657446, 'renal-bundle-kidneys-nephrons-raas') },

@@ -3,7 +3,7 @@ import ResourceLibrary from '../components/ResourceLibrary'
 import Reveal from '../components/Reveal'
 import { useLocation } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { ETSY_SHOP_URL, RELAYED_SHOP_URL } from '../data/etsyStudyGuides'
+import { ETSY_SHOP_URL, RELAYED_SHOP_URL, ULTIMATE_BUNDLE_ETSY_URL, ULTIMATE_BUNDLE_RELAYED_URL } from '../data/etsyStudyGuides'
 import { TESTIMONIALS } from '../data/etsyReviews'
 
 const REVIEW_HOLD_MS = 3500
@@ -32,11 +32,15 @@ const WHATS_INSIDE = [
   },
 ]
 
-function ShopButtons({ className = '' }) {
+function ShopButtons({
+  className = '',
+  relayedUrl = RELAYED_SHOP_URL,
+  etsyUrl = ETSY_SHOP_URL,
+}) {
   return (
     <div className={`flex flex-wrap gap-3 ${className}`}>
       <a
-        href={RELAYED_SHOP_URL}
+        href={relayedUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="btn-shimmer inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-teal-600 text-white font-semibold text-sm hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-colors"
@@ -45,7 +49,7 @@ function ShopButtons({ className = '' }) {
         <ExternalIcon />
       </a>
       <a
-        href={ETSY_SHOP_URL}
+        href={etsyUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border-2 border-teal-500 text-teal-700 font-semibold text-sm hover:bg-teal-50 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-all hover:-translate-y-0.5"
@@ -254,7 +258,10 @@ export default function StudyGuides() {
                   </li>
                 ))}
               </ul>
-              <ShopButtons />
+              <ShopButtons
+                relayedUrl={ULTIMATE_BUNDLE_RELAYED_URL}
+                etsyUrl={ULTIMATE_BUNDLE_ETSY_URL}
+              />
             </div>
           </div>
         </div>

@@ -37,7 +37,7 @@ export default function Blog() {
         />
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 lg:gap-10 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
             <div className="animate-review-in">
               <p className="eyebrow mb-2">Blog</p>
               <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
@@ -48,15 +48,28 @@ export default function Blog() {
               </p>
             </div>
 
-            <div className="relative mx-auto w-full max-w-[220px] sm:max-w-[260px] lg:max-w-[280px] animate-review-in [animation-delay:120ms]">
-              <div className="absolute -inset-2.5 rounded-[1.5rem] bg-gradient-to-br from-teal-100/70 to-brand-skyPastel/40 blur-sm" aria-hidden />
-              <img
-                src="/blog-hero.jpg"
-                alt="Pharmacist compounding in a sterile cleanroom"
-                className="relative w-full aspect-[3/4] object-cover rounded-2xl border border-white/80 shadow-sm"
-                width={280}
-                height={373}
-              />
+            <div className="mx-auto flex w-full max-w-[420px] sm:max-w-[520px] lg:max-w-none gap-5 sm:gap-6 animate-review-in [animation-delay:120ms]">
+              <div className="relative flex-1">
+                <div className="absolute -inset-2.5 rounded-[1.5rem] bg-gradient-to-br from-teal-100/70 to-brand-skyPastel/40 blur-sm" aria-hidden />
+                <img
+                  src="/blog-hero.jpg"
+                  alt="Pharmacist compounding in a sterile cleanroom"
+                  className="relative w-full aspect-[3/4] object-cover rounded-2xl border border-white/80 shadow-sm"
+                  width={280}
+                  height={373}
+                />
+              </div>
+
+              <div className="relative flex-1">
+                <div className="absolute -inset-2.5 rounded-[1.5rem] bg-gradient-to-br from-teal-100/70 to-brand-skyPastel/40 blur-sm" aria-hidden />
+                <img
+                  src="/blog-graduation.png"
+                  alt="Dr. Sarah, PharmD, RPh in graduation cap and gown"
+                  className="relative w-full aspect-[3/4] object-cover rounded-2xl border border-white/80 shadow-sm"
+                  width={280}
+                  height={373}
+                />
+              </div>
             </div>
           </div>
         </div>

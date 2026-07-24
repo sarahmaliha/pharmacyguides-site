@@ -7,21 +7,9 @@
 import { writeFileSync } from 'fs'
 import { fileURLToPath } from 'url'
 import { dirname, join } from 'path'
+import { BASE_URL, ROUTES, routePriority } from './routes.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
-
-const BASE_URL = 'https://pharmacyguides.net'
-
-const ROUTES = [
-  '/',
-  '/study-guides',
-  '/industry-pivot',
-  '/wellness',
-  '/mentorship',
-  '/blog',
-  '/blog/top-5-appe-disease-states',
-  '/about',
-]
 
 const lastmod = new Date().toISOString().split('T')[0]
 
@@ -31,7 +19,7 @@ const urlEntries = ROUTES.map((path) => {
     <loc>${loc}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>${path === '/' ? '1.0' : '0.8'}</priority>
+    <priority>${routePriority(path)}</priority>
   </url>`
 }).join('\n')
 

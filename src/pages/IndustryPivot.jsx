@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { Helmet } from 'react-helmet-async'
 import CareerPath from '../components/CareerPath'
 import FunctionalAreas from '../components/FunctionalAreas'
 import ResourceLibrary from '../components/ResourceLibrary'
@@ -32,6 +33,13 @@ export default function IndustryPivot() {
 
   return (
     <main className="min-h-[60vh]">
+      <Helmet>
+        <title>Industry Pivot Roadmap | PharmacyGuides LLC</title>
+        <meta
+          name="description"
+          content="Plan your pharmacy-to-industry pivot: functional areas, MSL career path, networking resources, and mentorship for pharmacists ready for Medical Affairs and beyond."
+        />
+      </Helmet>
       <section
         className="relative py-12 sm:py-16 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/how-i-help-banner.png')" }}

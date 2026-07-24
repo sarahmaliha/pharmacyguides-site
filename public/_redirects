@@ -1,0 +1,2 @@
+# Serve prerendered pages when they exist; fall back to SPA shell for unknown paths.
+/*    /index.html   200

@@ -11,7 +11,12 @@ export default function Reveal({ children, className = '', delayMs = 0 }) {
     const el = ref.current
     if (!el) return
 
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    // Puppeteer prerender sets navigator.webdriver — show content immediately
+    // so saved HTML is fully visible to crawlers.
+    if (
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+      navigator.webdriver
+    ) {
       setShown(true)
       return
     }

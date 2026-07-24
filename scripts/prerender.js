@@ -3,13 +3,16 @@
  * into dist/ so crawlers receive real page content (not an empty #root shell).
  *
  * Usage: node scripts/prerender.js
+ *
+ * - On Vercel: uses @sparticuz/chromium (system Chrome is unavailable there)
+ * - Locally: uses Google Chrome / Chromium if installed
  */
 
-import { mkdirSync, readFileSync, writeFileSync } from 'fs'
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs'
 import { dirname, join } from 'path'
 import { fileURLToPath } from 'url'
 import { preview } from 'vite'
-import puppeteer from 'puppeteer'
+import puppeteer from 'puppeteer-core'
 import { ROUTES } from './routes.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -30,9 +33,52 @@ const TITLE_HINTS = {
   '/about': 'About PharmacyGuides',
 }
 
+const LOCAL_CHROME_CANDIDATES = [
+  process.env.CHROME_PATH,
+  process.env.PUPPETEER_EXECUTABLE_PATH,
+  '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+  '/Applications/Chromium.app/Contents/MacOS/Chromium',
+  '/usr/bin/google-chrome',
+  '/usr/bin/google-chrome-stable',
+  '/usr/bin/chromium',
+  '/usr/bin/chromium-browser',
+].filter(Boolean)
+
 function outPathForRoute(route) {
   if (route === '/') return join(DIST, 'index.html')
   return join(DIST, route.replace(/^\//, ''), 'index.html')
+}
+
+async function launchBrowser() {
+  if (process.env.VERCEL) {
+    const chromium = (await import('@sparticuz/chromium')).default
+    console.log('Launching @sparticuz/chromium (Vercel)')
+    return puppeteer.launch({
+      args: chromium.args,
+      defaultViewport: chromium.defaultViewport,
+      executablePath: await chromium.executablePath(),
+      headless: chromium.headless,
+    })
+  }
+
+  for (const executablePath of LOCAL_CHROME_CANDIDATES) {
+    if (!existsSync(executablePath)) continue
+    console.log(`Launching local Chrome: ${executablePath}`)
+    return puppeteer.launch({
+      executablePath,
+      headless: true,
+      args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--disable-dev-shm-usage',
+        '--disable-gpu',
+      ],
+    })
+  }
+
+  throw new Error(
+    'No Chrome/Chromium found for prerender. Install Google Chrome, or set CHROME_PATH.',
+  )
 }
 
 async function waitForPageReady(page, route) {
@@ -104,15 +150,7 @@ async function main() {
   const origin = `http://127.0.0.1:${PORT}`
   console.log(`Prerendering ${ROUTES.length} routes from ${origin}`)
 
-  const browser = await puppeteer.launch({
-    headless: true,
-    args: [
-      '--no-sandbox',
-      '--disable-setuid-sandbox',
-      '--disable-dev-shm-usage',
-      '--disable-gpu',
-    ],
-  })
+  const browser = await launchBrowser()
 
   try {
     // Prerender `/` last so restoring the SPA shell between routes cannot

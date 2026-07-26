@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop'
+import Analytics from './components/Analytics'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 
@@ -26,6 +27,7 @@ export default function App() {
   return (
     <div className="flex min-h-screen flex-col">
       <ScrollToTop />
+      <Analytics />
       <Navbar />
       <div className="flex-1">
         <Suspense fallback={<PageFallback />}>

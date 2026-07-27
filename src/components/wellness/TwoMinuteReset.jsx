@@ -8,6 +8,9 @@ function formatTime(seconds) {
   return `${m}:${s.toString().padStart(2, '0')}`
 }
 
+const cardShell =
+  'rounded-2xl border border-teal-100/70 bg-brand-mintLight/30 p-5 sm:p-6 h-full flex flex-col'
+
 function TimerCard() {
   const [secondsLeft, setSecondsLeft] = useState(TOTAL_SECONDS)
   const [isRunning, setIsRunning] = useState(false)
@@ -42,12 +45,14 @@ function TimerCard() {
   }
 
   return (
-    <div className="rounded-xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm h-full flex flex-col">
+    <div className={cardShell}>
       <div className="flex items-center gap-3 mb-4">
         <span className="text-2xl" aria-hidden>⏱️</span>
-        <h3 className="font-display font-semibold text-slate-900 text-lg">2-Minute Timer</h3>
+        <h3 className="font-display font-semibold text-slate-900 text-lg">Two quiet minutes</h3>
       </div>
-      <p className="text-slate-600 text-sm mb-4">Take a short break. Start the timer and step away for two minutes.</p>
+      <p className="text-slate-600 text-sm mb-4 leading-relaxed">
+        Step away from the inbox, the chart, or the study guide. Just two minutes.
+      </p>
       <div className="mt-auto space-y-3">
         <p className="font-mono text-3xl font-semibold text-teal-700 tabular-nums" aria-live="polite">
           {formatTime(secondsLeft)}
@@ -56,14 +61,14 @@ function TimerCard() {
           <button
             type="button"
             onClick={isRunning ? handlePause : handleStart}
-            className="py-2.5 px-4 rounded-xl bg-teal-600 text-white font-semibold text-sm hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-colors"
+            className="py-2.5 px-4 rounded-full bg-teal-600 text-white font-semibold text-sm hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-colors"
           >
             {isRunning ? 'Pause' : 'Start'}
           </button>
           <button
             type="button"
             onClick={handleReset}
-            className="py-2.5 px-4 rounded-xl border-2 border-slate-200 text-slate-700 font-semibold text-sm hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-colors"
+            className="py-2.5 px-4 rounded-full border-2 border-teal-100 text-slate-700 font-semibold text-sm hover:bg-white/70 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-colors"
           >
             Reset
           </button>
@@ -116,19 +121,21 @@ function BoxBreathingCard() {
   const progress = step ? Math.min(count / step.count, 1) : 0
 
   return (
-    <div className="rounded-xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm h-full flex flex-col">
+    <div className={cardShell}>
       <div className="flex items-center gap-3 mb-4">
         <span className="text-2xl" aria-hidden>🌬️</span>
-        <h3 className="font-display font-semibold text-slate-900 text-lg">Box Breathing (4-4-4-4)</h3>
+        <h3 className="font-display font-semibold text-slate-900 text-lg">Box breathing</h3>
       </div>
-      <p className="text-slate-600 text-sm mb-4">Inhale 4, hold 4, exhale 4, hold 4. Follow the step indicator below.</p>
+      <p className="text-slate-600 text-sm mb-4 leading-relaxed">
+        Inhale 4, hold 4, exhale 4, hold 4. A simple reset between patients, lectures, or long days.
+      </p>
       <div className="mt-auto space-y-3">
         {isActive ? (
           <>
             <p className="text-sm font-medium text-teal-700" aria-live="polite">
               Step {stepIndex + 1} of 4: {step.label} ({count} of {step.count})
             </p>
-            <div className="h-2 rounded-full bg-slate-100 overflow-hidden">
+            <div className="h-2 rounded-full bg-white/80 overflow-hidden">
               <div
                 className="h-full bg-teal-500 rounded-full transition-all duration-300 ease-out"
                 style={{ width: `${progress * 100}%` }}
@@ -137,7 +144,7 @@ function BoxBreathingCard() {
             <button
               type="button"
               onClick={handleStop}
-              className="py-2.5 px-4 rounded-xl border-2 border-slate-200 text-slate-700 font-semibold text-sm hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-colors"
+              className="py-2.5 px-4 rounded-full border-2 border-teal-100 text-slate-700 font-semibold text-sm hover:bg-white/70 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-colors"
             >
               Stop
             </button>
@@ -146,7 +153,7 @@ function BoxBreathingCard() {
           <button
             type="button"
             onClick={handleStart}
-            className="py-2.5 px-4 rounded-xl bg-teal-600 text-white font-semibold text-sm hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-colors"
+            className="py-2.5 px-4 rounded-full bg-teal-600 text-white font-semibold text-sm hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-colors"
           >
             Start breathing
           </button>
@@ -157,36 +164,41 @@ function BoxBreathingCard() {
 }
 
 const QUICK_TIPS = [
-  { icon: '🌿', title: 'Ground yourself', description: 'Name 5 things you see, 4 you can touch, 3 you hear, 2 you smell, 1 you taste.' },
-  { icon: '💧', title: 'Pause and sip', description: 'Get a glass of water. Drink slowly and notice the temperature and taste.' },
+  {
+    icon: '🌿',
+    title: 'Ground yourself',
+    description: 'Name 5 things you see, 4 you can touch, 3 you hear, 2 you smell, 1 you taste.',
+  },
+  {
+    icon: '💧',
+    title: 'Pause and sip',
+    description: 'Get a glass of water. Drink slowly and notice the temperature and taste.',
+  },
 ]
 
 export default function TwoMinuteReset() {
   return (
     <section
-      className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm"
+      className="rounded-2xl border border-teal-100/80 bg-white/85 p-6 sm:p-8 shadow-sm"
       aria-labelledby="reset-heading"
     >
       <h2 id="reset-heading" className="font-display text-xl sm:text-2xl font-bold text-slate-900 mb-2">
-        2-Minute Reset Tools
+        Take 2 minutes
       </h2>
-      <p className="text-slate-600 text-sm sm:text-base mb-6">
-        Short practices you can do anytime. Pick one and give yourself a couple of minutes.
+      <p className="text-slate-600 text-sm sm:text-base mb-6 leading-relaxed">
+        Short practices for between classes, before a shift, or after a hard day. Pick one and give yourself a couple of minutes.
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
         <TimerCard />
         <BoxBreathingCard />
         {QUICK_TIPS.map(({ icon, title, description }) => (
-          <div
-            key={title}
-            className="rounded-xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm flex flex-col"
-          >
+          <div key={title} className={cardShell}>
             <div className="flex items-center gap-3 mb-2">
               <span className="text-2xl" aria-hidden>{icon}</span>
               <h3 className="font-display font-semibold text-slate-900 text-lg">{title}</h3>
             </div>
-            <p className="text-slate-600 text-sm mt-auto">{description}</p>
+            <p className="text-slate-600 text-sm mt-auto leading-relaxed">{description}</p>
           </div>
         ))}
       </div>

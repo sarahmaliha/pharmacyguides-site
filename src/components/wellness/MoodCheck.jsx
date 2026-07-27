@@ -1,28 +1,28 @@
 import { useState } from 'react'
 
 const MOOD_OPTIONS = [
-  { value: 'great', label: 'Doing great', emoji: '☀️' },
-  { value: 'good', label: 'Doing okay', emoji: '🌤️' },
+  { value: 'great', label: 'Doing okay today', emoji: '☀️' },
+  { value: 'good', label: 'Holding steady', emoji: '🌤️' },
   { value: 'meh', label: 'A bit low', emoji: '⛅' },
   { value: 'heavy', label: 'Heavy right now', emoji: '🌧️' },
 ]
 
 const MOOD_CONTENT = {
   great: {
-    message: "So glad to hear it. Keep doing what’s working for you.",
-    actionStep: "Take one small moment to notice what feels good right now.",
+    message: "Glad you have a little light today. That matters, even on busy rotations or long shifts.",
+    actionStep: "Take one small moment to notice what feels supportive right now.",
   },
   good: {
-    message: "Thanks for checking in. You’re doing fine. Take it one step at a time.",
-    actionStep: "Pick one thing you can do in the next 10 minutes that would feel supportive.",
+    message: "Thanks for checking in. Steady is still a win when the days keep stacking up.",
+    actionStep: "Pick one thing you can do in the next 10 minutes that would feel kind to yourself.",
   },
   meh: {
-    message: "It’s okay to feel this way. A small break or a 2-minute reset might help.",
-    actionStep: "Try one 2-minute reset below, or step away for a short walk or sip of water.",
+    message: "It is okay to feel this way. School, residency, and practice can all wear you down without asking permission.",
+    actionStep: "Try a 2-minute reset below, or step away for a short walk or sip of water.",
   },
   heavy: {
-    message: "Thanks for being here. You’re not alone. Consider a 2-minute reset below, or come back whenever you’re ready.",
-    actionStep: "Choose one gentle action: a 2-minute reset, a breath, or reaching out to someone you trust.",
+    message: "Thank you for being here. You are not alone in this, whether you are a student, resident, or pharmacist carrying too much.",
+    actionStep: "Choose one gentle action: a short reset, a slow breath, or reaching out to someone you trust.",
   },
 }
 
@@ -41,14 +41,14 @@ export default function MoodCheck() {
 
   return (
     <section
-      className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm"
+      className="rounded-2xl border border-teal-100/80 bg-white/85 p-6 sm:p-8 shadow-sm"
       aria-labelledby="mood-check-heading"
     >
       <h2 id="mood-check-heading" className="font-display text-xl sm:text-2xl font-bold text-slate-900 mb-2">
-        Mood Check
+        How are you, really?
       </h2>
-      <p className="text-slate-600 text-sm sm:text-base mb-6">
-        How are you feeling right now? Pick what fits. No judgment, just a gentle check-in.
+      <p className="text-slate-600 text-sm sm:text-base mb-6 leading-relaxed">
+        No performance review. Just a quiet check-in for wherever you are in pharmacy life.
       </p>
 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
@@ -57,26 +57,26 @@ export default function MoodCheck() {
             key={value}
             type="button"
             onClick={() => handleSelect(value)}
-            className={`flex flex-col items-center justify-center gap-2 py-4 px-3 rounded-xl border-2 text-sm font-medium transition-colors ${
+            className={`flex flex-col items-center justify-center gap-2 py-4 px-3 rounded-2xl border-2 text-sm font-medium transition-colors ${
               selected === value
-                ? 'border-teal-500 bg-teal-50 text-teal-700'
-                : 'border-slate-200 bg-slate-50/50 text-slate-600 hover:border-teal-200 hover:bg-teal-50/50'
+                ? 'border-accent-300 bg-accent-50 text-accent-800'
+                : 'border-teal-100/80 bg-brand-mintLight/40 text-slate-600 hover:border-accent-200 hover:bg-accent-50/60'
             }`}
             aria-pressed={selected === value}
           >
             <span className="text-2xl" aria-hidden>{emoji}</span>
-            <span>{label}</span>
+            <span className="text-center leading-snug">{label}</span>
           </button>
         ))}
       </div>
 
       {content && (
         <div
-          className="rounded-xl border border-teal-100 bg-teal-50/70 px-4 py-4 text-slate-700 text-sm sm:text-base animate-[fade-in-up_0.4s_ease-out] space-y-2"
+          className="rounded-2xl border border-accent-100 bg-accent-50/70 px-4 py-4 text-slate-700 text-sm sm:text-base animate-[fade-in-up_0.4s_ease-out] space-y-2"
           role="status"
         >
           <p>{content.message}</p>
-          <p className="text-teal-700 font-medium">{content.actionStep}</p>
+          <p className="text-accent-700 font-medium">{content.actionStep}</p>
         </div>
       )}
 
@@ -84,7 +84,7 @@ export default function MoodCheck() {
         <button
           type="button"
           onClick={handleClear}
-          className="mt-4 text-slate-500 hover:text-slate-700 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 rounded-lg px-2 py-1"
+          className="mt-4 text-slate-500 hover:text-slate-700 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-accent-400 focus:ring-offset-2 rounded-lg px-2 py-1"
         >
           Clear selection
         </button>

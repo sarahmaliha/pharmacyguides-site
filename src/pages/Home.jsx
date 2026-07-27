@@ -26,7 +26,7 @@ const START_HERE = [
   },
   {
     title: 'Wellness Hub',
-    description: 'A calm reset for busy pharmacy days - mood checks and 2-minute tools.',
+    description: 'A calm reset for students, residents, and pharmacists on heavy days.',
     to: '/wellness',
     cta: 'Take a pause',
   },

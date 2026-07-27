@@ -293,27 +293,51 @@ export default function StudyGuides() {
 
       {/* 4. Origin story */}
       <section className="py-14 sm:py-20">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-display text-2xl sm:text-3xl font-bold text-slate-900 mb-6">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-display text-2xl sm:text-3xl font-bold text-slate-900 mb-6 lg:mb-8">
             How This Bundle Came Together
           </h2>
-          <div className="space-y-5 text-slate-600 leading-relaxed">
-            <p>
-              As a pharmacy student, I was drowning in dense textbooks and scattered notes, and I needed something clearer. So I started building my own study guides: visual, organized, and actually enjoyable to learn from.
-            </p>
-            <p>
-              Classmates asked to use them. We quizzed each other from the pages, and study sessions became sharper and more collaborative. The results spoke for themselves, including a friend who used the Ultimate Bundle and passed the NAPLEX on the first try.
-            </p>
-            <p>
-              That momentum became PharmacyGuides. Today these digital guides are designed to help you ace pharmacy school, rotations, and boards so you can study smarter, retain more, and move forward with confidence.
-            </p>
+
+          <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-8 lg:gap-10 items-start">
+            <div>
+              <div className="space-y-5 text-slate-600 leading-relaxed">
+                <p>
+                  As a pharmacy student, I was drowning in dense textbooks and scattered notes, and I needed something clearer. So I started building my own study guides: visual, organized, and actually enjoyable to learn from.
+                </p>
+                <p>
+                  Classmates asked to use them. We quizzed each other from the pages, and study sessions became sharper and more collaborative. The results spoke for themselves, including a friend who used the Ultimate Bundle and passed the NAPLEX on the first try.
+                </p>
+                <p>
+                  That momentum became PharmacyGuides. Today these digital guides are designed to help you ace pharmacy school, rotations, and boards so you can study smarter, retain more, and move forward with confidence.
+                </p>
+              </div>
+              <blockquote className="mt-8 rounded-2xl border border-accent-100 bg-accent-50/60 px-5 py-4 text-accent-900 italic">
+                “My mission is to help students spend less time feeling overwhelmed and more time feeling confident in what they know.”
+                <footer className="mt-2 text-sm not-italic font-medium text-accent-700">
+                  - Dr. Sarah, PharmD, RPh
+                </footer>
+              </blockquote>
+            </div>
+
+            <div className="mx-auto w-full max-w-[280px] sm:max-w-[300px] lg:mx-0 lg:justify-self-end">
+              <div className="relative overflow-hidden rounded-2xl border border-teal-100/80 bg-slate-900 shadow-md ring-1 ring-black/5">
+                <video
+                  className="block w-full aspect-[9/16] bg-slate-900"
+                  controls
+                  playsInline
+                  preload="metadata"
+                  poster="/videos/study-guides-journey-poster.jpg"
+                  aria-label="Dr. Sarah sharing how the Ultimate Bundle and one-pagers came together"
+                >
+                  <source src="/videos/study-guides-journey.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <p className="mt-3 text-center text-xs text-slate-500 leading-relaxed lg:text-left">
+                Hear how the Ultimate Bundle and one-pagers started. Turn your sound on.
+              </p>
+            </div>
           </div>
-          <blockquote className="mt-8 rounded-2xl border border-accent-100 bg-accent-50/60 px-5 py-4 text-accent-900 italic">
-            “My mission is to help students spend less time feeling overwhelmed and more time feeling confident in what they know.”
-            <footer className="mt-2 text-sm not-italic font-medium text-accent-700">
-              - Dr. Sarah, PharmD, RPh
-            </footer>
-          </blockquote>
         </div>
       </section>
 

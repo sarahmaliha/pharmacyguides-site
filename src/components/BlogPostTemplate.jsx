@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import { canonicalUrl } from '../site'
 
 /**
  * SEO-optimized blog post template.
@@ -25,7 +26,8 @@ export default function BlogPostTemplate({
   relatedResources = [],
   children,
 }) {
-  const canonical = typeof window !== 'undefined' ? window.location.href : ''
+  const { pathname } = useLocation()
+  const canonical = canonicalUrl(pathname)
   const siteName = 'PharmacyGuides LLC'
 
   return (
@@ -36,6 +38,7 @@ export default function BlogPostTemplate({
         <link rel="canonical" href={canonical} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonical} />
         {image && <meta property="og:image" content={image} />}
         <meta property="og:type" content="article" />
         {publishedAt && <meta property="article:published_time" content={publishedAt} />}

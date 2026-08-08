@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop'
 import Analytics from './components/Analytics'
+import Canonical from './components/Canonical'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 
@@ -27,6 +28,7 @@ export default function App() {
   return (
     <div className="flex min-h-screen flex-col">
       <ScrollToTop />
+      <Canonical />
       <Analytics />
       <Navbar />
       <div className="flex-1">

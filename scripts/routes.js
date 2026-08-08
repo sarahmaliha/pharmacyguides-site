@@ -2,7 +2,9 @@
  * Canonical site routes — shared by sitemap generation and prerender.
  * Keep this list in sync with src/App.jsx.
  */
-export const BASE_URL = 'https://pharmacyguides.net'
+import { BASE_URL } from '../src/site.js'
+
+export { BASE_URL }
 
 export const ROUTES = [
   '/',

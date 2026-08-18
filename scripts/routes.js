@@ -14,6 +14,7 @@ export const ROUTES = [
   '/mentorship',
   '/blog',
   '/blog/top-5-appe-disease-states',
+  '/blog/how-i-paid-off-pharmacy-school-loans',
   '/blog/retail-pharmacy-to-msl',
   '/about',
 ]

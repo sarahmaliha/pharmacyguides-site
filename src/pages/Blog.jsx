@@ -79,8 +79,8 @@ export default function Blog() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between gap-4 mb-8">
             <div>
-              <h2 className="font-display text-2xl sm:text-3xl font-bold text-slate-900">Latest post</h2>
-              <p className="text-slate-600 mt-1">More stories from the journey are on the way - start with this one.</p>
+              <h2 className="font-display text-2xl sm:text-3xl font-bold text-slate-900">Latest posts</h2>
+              <p className="text-slate-600 mt-1">Honest notes from school, loans, rotations, and the path after.</p>
             </div>
           </div>
 

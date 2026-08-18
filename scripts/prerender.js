@@ -29,6 +29,7 @@ const TITLE_HINTS = {
   '/mentorship': 'Pharmacy Mentorship Sessions',
   '/blog': 'Blog | PharmacyGuides',
   '/blog/top-5-appe-disease-states': 'Top 5 Disease States',
+  '/blog/how-i-paid-off-pharmacy-school-loans': 'Paid Off $220,000',
   '/blog/retail-pharmacy-to-msl': 'Retail Pharmacy to MSL',
   '/about': 'About PharmacyGuides',
 }

@@ -20,6 +20,9 @@ export default function BlogPostTemplate({
   title = 'Blog Post Title',
   description = 'Meta description for SEO and social sharing.',
   image,
+  imageAlt = '',
+  imageClassName = 'object-center',
+  imageWrapperClassName = 'aspect-[4/5] sm:aspect-video max-h-[28rem]',
   publishedAt,
   author = { name: 'Dr. Sarah', title: 'PharmD, RPh · PharmacyGuides, LLC' },
   keyTakeaways = [],
@@ -72,11 +75,11 @@ export default function BlogPostTemplate({
         </header>
 
         {image && (
-          <div className="rounded-2xl bg-teal-100 mb-10 overflow-hidden aspect-[4/5] sm:aspect-video max-h-[28rem]">
+          <div className={`rounded-2xl bg-teal-100 mb-10 overflow-hidden ${imageWrapperClassName}`}>
             <img
               src={image}
-              alt=""
-              className="w-full h-full object-cover object-center"
+              alt={imageAlt}
+              className={`w-full h-full object-cover ${imageClassName}`}
               onError={(e) => {
                 e.target.onerror = null
                 e.target.style.display = 'none'

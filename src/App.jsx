@@ -14,6 +14,7 @@ const Wellness = lazy(() => import('./pages/Wellness'))
 const About = lazy(() => import('./pages/About'))
 const Blog = lazy(() => import('./pages/Blog'))
 const BlogPostAppeTopics = lazy(() => import('./pages/BlogPostAppeTopics'))
+const BlogPostLoanPayoff = lazy(() => import('./pages/BlogPostLoanPayoff'))
 const BlogPostSample = lazy(() => import('./pages/BlogPostSample'))
 
 function PageFallback() {
@@ -41,6 +42,7 @@ export default function App() {
             <Route path="/wellness" element={<Wellness />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/top-5-appe-disease-states" element={<BlogPostAppeTopics />} />
+            <Route path="/blog/how-i-paid-off-pharmacy-school-loans" element={<BlogPostLoanPayoff />} />
             <Route path="/blog/retail-pharmacy-to-msl" element={<BlogPostSample />} />
             <Route path="/about" element={<About />} />
           </Routes>

@@ -1,5 +1,5 @@
 import BlogPostTemplate from '../components/BlogPostTemplate'
-import { RELAYED_SHOP_URL } from '../data/etsyStudyGuides'
+import { Link } from 'react-router-dom'
 
 export default function BlogPostAppeTopics() {
   return (
@@ -114,10 +114,10 @@ export default function BlogPostAppeTopics() {
       </p>
       <p>
         If you&apos;re looking for a concise way to review these topics before rotations, I created PharmacyGuides to make studying less overwhelming. Each one-page guide breaks down complex disease states into practical, high-yield references designed for pharmacy students, APPE rotations, and board preparation. You can{' '}
-        <a href={RELAYED_SHOP_URL} target="_blank" rel="noopener noreferrer">
-          explore my resources on RelayED
-        </a>{' '}
-        to find the guides that best fit your learning goals.
+        <Link to="/study-guides">
+          explore my study guides
+        </Link>{' '}
+        to find the ones that best fit your learning goals.
       </p>
       <p>
         Good luck on your APPEs! You&apos;ve worked hard to get here, and I hope these tips help you start your rotations with confidence.

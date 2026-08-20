@@ -15,6 +15,7 @@ export const ROUTES = [
   '/blog',
   '/blog/top-5-appe-disease-states',
   '/blog/how-i-paid-off-pharmacy-school-loans',
+  '/blog/4-career-lessons-id-give-my-younger-self',
   '/blog/retail-pharmacy-to-msl',
   '/about',
 ]

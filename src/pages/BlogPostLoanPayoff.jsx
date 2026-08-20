@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default function BlogPostLoanPayoff() {
   return (
     <BlogPostTemplate
-      title="How I Paid Off $220,000 of Pharmacy School Loans"
+      title="How I Paid Off $220,000 of Pharmacy School Loans (While Still Having a Life)"
       description="I graduated in 2022 with close to $280,000 in pharmacy school loans and have already paid off about $220,000. How a 3-year internship, a study guide business, and very intentional money habits got me here."
       image="/blog/loan-payoff-cover.png"
       imageAlt="Dr. Sarah, PharmD, sitting on the steps in graduation cap and gown"
